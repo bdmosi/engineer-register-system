@@ -1,0 +1,357 @@
+2014/08/04 10:49:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "GII".' in /var/www/html/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('GII')
+#1 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/managementsystem/index.php?r=GII
+---
+2014/08/04 10:52:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/bootstrap".' in /var/www/html/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/bootstrap')
+#1 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/managementsystem/index.php?r=gii/bootstrap
+---
+2014/08/04 11:37:22 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity._id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/managementsystem/protected/components/UserIdentity.php(29): CComponent->__set('_id', '1')
+#1 /var/www/html/managementsystem/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/html/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/html/managementsystem/protected/controllers/SiteController.php(94): CModel->validate()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/managementsystem/index.php?r=site/login
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=site/login
+---
+2014/08/04 11:51:30 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity._id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/managementsystem/protected/components/UserIdentity.php(29): CComponent->__set('_id', '1')
+#1 /var/www/html/managementsystem/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/html/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/html/managementsystem/protected/controllers/SiteController.php(94): CModel->validate()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/managementsystem/index.php?r=site/login
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=site/login
+---
+2014/08/04 12:03:00 [warning] [application] Failed to set unsafe attribute "marital_status_id" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:03:00 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.mstatus_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('mstatus_id')
+#1 /var/www/html/yii/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('mstatus_id')
+#2 /var/www/html/yii/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Personinfo), 'mstatus_id')
+#3 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(Personinfo), NULL)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(72): CActiveRecord->save()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#17 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:04:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('membership/admi...')
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/managementsystem/index.php?r=membership/admin
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=membership/update&id=2
+---
+2014/08/04 12:05:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('membership/admi...')
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/managementsystem/index.php?r=membership/admin
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=membership/update&id=2
+---
+2014/08/04 12:06:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "maritalstatus".' in /var/www/html/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('maritalstatus')
+#1 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/managementsystem/index.php?r=maritalstatus
+---
+2014/08/04 12:07:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "maritalstatus".' in /var/www/html/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('maritalstatus')
+#1 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/managementsystem/index.php?r=maritalstatus
+---
+2014/08/04 12:11:40 [warning] [application] Failed to set unsafe attribute "marital_status_id" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:11:40 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.mstatus_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('mstatus_id')
+#1 /var/www/html/yii/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('mstatus_id')
+#2 /var/www/html/yii/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Personinfo), 'mstatus_id')
+#3 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(Personinfo), NULL)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(72): CActiveRecord->save()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#17 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:32:45 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.dob" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('dob')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('dob')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Personinfo), 'dob')
+#3 /var/www/html/managementsystem/protected/extensions/bootstrap/helpers/TbHtml.php(2221): CHtml::activeInputField('text', Object(Personinfo), 'dob', Array)
+#4 /var/www/html/managementsystem/protected/extensions/bootstrap/helpers/TbHtml.php(1497): TbHtml::activeTextInputField('text', Object(Personinfo), 'dob', Array)
+#5 /var/www/html/managementsystem/protected/extensions/bootstrap/helpers/TbHtml.php(2114): TbHtml::activeTextField(Object(Personinfo), 'dob', Array)
+#6 /var/www/html/managementsystem/protected/extensions/bootstrap/helpers/TbHtml.php(2070): TbHtml::createActiveInput('textField', Object(Personinfo), 'dob', Array, Array)
+#7 /var/www/html/managementsystem/protected/extensions/bootstrap/helpers/TbHtml.php(1774): TbHtml::activeControlGroup('textField', Object(Personinfo), 'dob', Array)
+#8 /var/www/html/managementsystem/protected/extensions/bootstrap/widgets/TbActiveForm.php(433): TbHtml::activeTextFieldControlGroup(Object(Personinfo), 'dob', Array)
+#9 /var/www/html/managementsystem/protected/views/personinfo/_form.php(28): TbActiveForm->textFieldControlGroup(Object(Personinfo), 'dob', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/m...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#13 /var/www/html/managementsystem/protected/views/personinfo/create.php(20): CController->renderPartial('_form', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/m...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#18 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(79): CController->render('create', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#20 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#27 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#29 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#30 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#31 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:40:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/admi...')
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/admin
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:44:45 [warning] [application] Failed to set unsafe attribute "dob" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:44:45 [warning] [application] Failed to set unsafe attribute "marital_status_id" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:44:45 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.date_of_birth" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('date_of_birth')
+#1 /var/www/html/yii/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('date_of_birth')
+#2 /var/www/html/yii/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Personinfo), 'date_of_birth')
+#3 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(Personinfo), NULL)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(72): CActiveRecord->save()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#17 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:46:40 [warning] [application] Failed to set unsafe attribute "marital_status_id" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:46:40 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.mstatus_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('mstatus_id')
+#1 /var/www/html/yii/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('mstatus_id')
+#2 /var/www/html/yii/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Personinfo), 'mstatus_id')
+#3 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(Personinfo), NULL)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(72): CActiveRecord->save()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#17 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 12:48:24 [warning] [application] Failed to set unsafe attribute "marital_status_id" of "Personinfo".
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (71)
+in /var/www/html/managementsystem/index.php (13)
+2014/08/04 12:48:24 [error] [exception.CException] exception 'CException' with message 'Property "Personinfo.mstatus_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('mstatus_id')
+#1 /var/www/html/yii/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('mstatus_id')
+#2 /var/www/html/yii/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Personinfo), 'mstatus_id')
+#3 /var/www/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(Personinfo), NULL)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(72): CActiveRecord->save()
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('personinfo/crea...')
+#17 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=personinfo/create
+---
+2014/08/04 13:33:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sex".' in /var/www/html/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sex')
+#1 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/managementsystem/index.php?r=sex
+---
+2014/08/04 13:34:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('maritalStatus/a...')
+#9 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/managementsystem/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/managementsystem/index.php?r=maritalStatus/admin
+HTTP_REFERER=http://localhost/managementsystem/index.php?r=maritalStatus
+---
+2014/08/04 13:38:07 [error] [php] call_user_func() expects parameter 1 to be a valid callback, array must have exactly two members (/var/www/html/yii/framework/web/helpers/CHtml.php:2143)
+Stack trace:
+#0 /var/www/html/managementsystem/protected/views/personinfo/_form.php(45): listData()
+#1 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#2 /var/www/html/yii/framework/web/CBaseController.php(95): PersoninfoController->renderInternal()
+#3 /var/www/html/yii/framework/web/CController.php(869): PersoninfoController->renderFile()
+#4 /var/www/html/managementsystem/protected/views/personinfo/create.php(20): PersoninfoController->renderPartial()
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require()
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): PersoninfoController->renderInternal()
+#7 /var/www/html/yii/framework/web/CController.php(869): PersoninfoController->renderFile()
+#8 /var/www/html/yii/framework/web/CController.php(782): PersoninfoController->renderPartial()
+#9 /var/www/html/managementsystem/protected/controllers/PersoninfoController.php(79): PersoninfoController->render()
+#10 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PersoninfoController->actionCreate()
+#11 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): PersoninfoController->runAction()
+#13 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): PersoninfoController->filterAccessControl()
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(265): PersoninfoController->runActionWithFilters()
+#19 /var/www/html/yii/framework/web/CWebApplication.php(282): PersoninfoController->run()
+#20 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/html/managementsystem/index.php(13): CWebApplication->run()
+REQUEST_URI=/managementsystem/index.php?r=personinfo/create
+in /var/www/html/managementsystem/protected/views/personinfo/_form.php (45)
+in /var/www/html/managementsystem/protected/views/personinfo/create.php (20)
+in /var/www/html/managementsystem/protected/controllers/PersoninfoController.php (79)
