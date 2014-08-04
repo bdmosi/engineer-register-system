@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Personinfo</h1>
+<h1>Personal information</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

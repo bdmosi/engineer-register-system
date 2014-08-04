@@ -84,8 +84,12 @@ class MaritalStatus extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public static function getMaritalStatus()
+        {
+            return CHtml::listData(MaritalStatus::model()->findAll(),'id','description');
+        }
 
-	/**
+        /**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.

@@ -1,20 +1,20 @@
 <?php
-/* @var $this PersoninfoController */
+/* @var $this SexController */
 /* @var $dataProvider CActiveDataProvider */
 ?>
 
 <?php
 $this->breadcrumbs=array(
-	'Personinfos',
+	'Sexes',
 );
 
 $this->menu=array(
-	array('label'=>'Create Personinfo','url'=>array('create')),
-	array('label'=>'Manage Personinfo','url'=>array('admin')),
+	array('label'=>'Create Sex','url'=>array('create')),
+	array('label'=>'Manage Sex','url'=>array('admin')),
 );
 ?>
 
-<h1>Personal Information</h1>
+<h1>Sexes</h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,

@@ -39,11 +39,11 @@
 
             <?php echo $form->textFieldControlGroup($model,'mobile',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->dropDownListControlGroup($model,'sex_id',array('empty'=>'Select Gender',1=>'Male',2=>'Female')); ?>
+            <?php echo $form->dropDownListControlGroup($model,'sex_id',  Sex::getSexOptions(),array('empty' => '--Select--')); ?>
     
-            <?php echo $form->dropDownListControlGroup($model,'marital_status_id',CHtml::listData(MaritalStatus::model()->findAll(),'id','description'),array('empty' => '--Select Marital Status--')); ?>
+            <?php echo $form->dropDownListControlGroup($model,'marital_status_id', MaritalStatus::getMaritalStatus(),array('empty' => '--Select--')) ; ?>
     
-            <?php echo $form->textFieldControlGroup($model,'erb_id',array('span'=>5)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'erb_id', Erb::getErbOptions(), array('empty' => '--Select--'));?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
@@ -52,6 +52,6 @@
 		)); ?>
     </div>
 
-    <?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?> 
 
 </div><!-- form -->

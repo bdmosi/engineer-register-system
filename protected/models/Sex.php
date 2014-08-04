@@ -44,7 +44,7 @@ class Sex extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'personinfos' => array(self::HAS_MANY, 'Personinfo', 'tbl_sex_id'),
+			'personinfos' => array(self::HAS_MANY, 'Personinfo', 'sex_id'),
 		);
 	}
 
@@ -84,6 +84,10 @@ class Sex extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public static function getSexOptions(){
+            return CHtml::listData(self::model()->findAll(),'id','description');
+        }
 
 	/**
 	 * Returns the static model of the specified AR class.
