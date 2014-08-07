@@ -11,6 +11,7 @@
  */
 class User extends CActiveRecord
 {
+        public $confirmPassword;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -29,6 +30,7 @@ class User extends CActiveRecord
 		return array(
 			array('username, password, email', 'required'),
 			array('username, password, email', 'length', 'max'=>255),
+                        array('confirmPassword','equalsPassword'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, email', 'safe', 'on'=>'search'),
@@ -112,5 +114,13 @@ class User extends CActiveRecord
         {
             return sha1($password);
 	}
+        
+        public function equalsPassword(){
+            if($this->hashPassword($this->confirmPassword)==$this->password){
+              return true;  
+            }
+            $this->addError('confirmPassword','Password does not match');
+            return false;
+        }
 
 }

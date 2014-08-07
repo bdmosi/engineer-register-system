@@ -27,12 +27,17 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
+                        array('deny',
+                            'actions'=>array('create'),
+                            'users'=>array('@')
+                        ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create'),
 				'users'=>array('*'),
 			),
+                        
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -69,8 +74,15 @@ class UserController extends Controller
 
 		if (isset($_POST['User'])) {
 			$model->attributes=$_POST['User'];
+                        $model->username = $model->email;
+                        $model->password = $model->hashPassword($model->password);
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+                                $profile = new Personinfo();
+                                $profile->ref_no = $model->id;
+                                if($profile->save()){
+				   //$this->redirect(array('view','id'=>$model->id));
+                                    $this->redirect(Yii::app()->homeUrl);
+                                }
 			}
 		}
 

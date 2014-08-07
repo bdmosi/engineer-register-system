@@ -28,7 +28,7 @@ class PersoninfoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','admin'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,13 +63,18 @@ class PersoninfoController extends Controller
 	public function actionCreate()
 	{
 		$model=new Personinfo;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Personinfo'])) {
 			$model->attributes=$_POST['Personinfo'];
+                        $photo = CUploadedFile::getInstance($model,'photo');
+                        $model->photo = mktime()."_{$photo->name}";
 			if ($model->save()) {
+                                $photo->saveAs(Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo);
+                                $imgObj = new ImageResize (Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo);
+                                $imgObj -> resizeImage('120','120', 'crop');
+                                $imgObj -> saveImage(Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo,100);
 				$this->redirect(array('view','id'=>$model->ref_no));
 			}
 		}

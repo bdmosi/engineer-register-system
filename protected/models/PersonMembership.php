@@ -61,7 +61,7 @@ class PersonMembership extends CActiveRecord
 			'id' => 'ID',
 			'membership_id' => 'Membership',
 			'personinfo_ref_no' => 'Personinfo Ref No',
-			'membership_id' => 'Membership',
+			
 		);
 	}
 

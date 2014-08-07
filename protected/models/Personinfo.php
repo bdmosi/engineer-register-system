@@ -15,13 +15,9 @@
  * @property string $house_tel
  * @property string $office_tel
  * @property string $mobile
- * @property integer $mstatus_id
- * @property integer $sex_id
  * @property integer $erb_id
  * @property integer $sex_id
  * @property integer $marital_status_id
- * @property integer $erb_id
- *
  * The followings are the available model relations:
  * @property Academic[] $academics
  * @property Employment[] $employments
@@ -50,12 +46,12 @@ class Personinfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile', 'required'),
-			array('mstatus_id, sex_id, marital_status_id,erb_id', 'numerical', 'integerOnly'=>true),
-			array('surname, fname, sname, place_birth, nationality, photo, house_tel, office_tel, mobile', 'length', 'max'=>255),
+			array('surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile', 'required','on'=>'update'),
+			array('sex_id, marital_status_id,erb_id', 'numerical', 'integerOnly'=>true),
+			array('surname, fname, sname, place_birth, nationality, photo, house_tel, office_tel, mobile', 'length', 'max'=>255,'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ref_no, surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile, mstatus_id, sex_id, erb_id, tbl_sex_id, tbl_marital_status_id, tbl_erb_id', 'safe', 'on'=>'search'),
+			array('ref_no, surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile, sex_id, erb_id, sex_id, marital_status_id, erb_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -95,7 +91,6 @@ class Personinfo extends CActiveRecord
 			'house_tel' => 'House Telephone',
 			'office_tel' => 'Office Telephone',
 			'mobile' => 'Mobile Number',
-			'mstatus_id' => 'Mstatus',
 			'sex_id' => 'Sex',
 			'erb_id' => 'Erb',
 			'sex_id' => 'Sex',
@@ -133,9 +128,6 @@ class Personinfo extends CActiveRecord
 		$criteria->compare('house_tel',$this->house_tel,true);
 		$criteria->compare('office_tel',$this->office_tel,true);
 		$criteria->compare('mobile',$this->mobile,true);
-		$criteria->compare('mstatus_id',$this->mstatus_id);
-		$criteria->compare('sex_id',$this->sex_id);
-		$criteria->compare('erb_id',$this->erb_id);
 		$criteria->compare('sex_id',$this->sex_id);
 		$criteria->compare('marital_status_id',$this->marital_status_id);
 		$criteria->compare('erb_id',$this->erb_id);

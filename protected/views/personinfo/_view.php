@@ -33,7 +33,6 @@
 	<?php echo CHtml::encode($data->nationality); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('photo')); ?>:</b>
 	<?php echo CHtml::encode($data->photo); ?>
 	<br />
@@ -62,6 +61,6 @@
 	<?php echo CHtml::encode($data->erb_id); ?>
 	<br />
 
-	*/ ?>
+
 
 </div>

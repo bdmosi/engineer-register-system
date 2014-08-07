@@ -12,9 +12,9 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Personinfo', 'url'=>array('index')),
-	array('label'=>'Create Personinfo', 'url'=>array('create')),
+	//array('label'=>'Create Personinfo', 'url'=>array('create')),
 	array('label'=>'View Personinfo', 'url'=>array('view', 'id'=>$model->ref_no)),
-	array('label'=>'Manage Personinfo', 'url'=>array('admin')),
+	//array('label'=>'Manage Personinfo', 'url'=>array('admin')),
 );
 ?>
 

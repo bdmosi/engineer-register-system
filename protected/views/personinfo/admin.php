@@ -48,16 +48,16 @@ $('.search-form form').submit(function(){
 		'sname',
 		'dob',
 		'place_birth',
-		/*
 		'nationality',
-		'photo',
+		/*
+                'photo',
 		'house_tel',
 		'office_tel',
 		'mobile',
 		'sex_id',
 		'marital_status_id',
 		'erb_id',
-		*/
+            */
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
