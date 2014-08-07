@@ -5,14 +5,12 @@
  *
  * The followings are the available columns in table 'tbl_academic':
  * @property integer $id
- * @property integer $academictype_id
  * @property string $university_name
- * @property integer $tbl_personinfo_ref_no
- * @property integer $tbl_academic_type_id
- *
+ * @property integer $personinfo_ref_no
+ * @property integer $academic_type_id
  * The followings are the available model relations:
- * @property Personinfo $tblPersoninfoRefNo
- * @property AcademicType $tblAcademicType
+ * @property Personinfo $PersoninfoRefNo
+ * @property AcademicType $AcademicType
  */
 class Academic extends CActiveRecord
 {
@@ -32,12 +30,12 @@ class Academic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('academictype_id, university_name, tbl_personinfo_ref_no, tbl_academic_type_id', 'required'),
-			array('academictype_id, personinfo_ref_no, academic_type_id', 'numerical', 'integerOnly'=>true),
+			array('academic_type_id, university_name', 'required'),
+			array('academic_type_id, personinfo_ref_no', 'numerical', 'integerOnly'=>true),
 			array('university_name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, academictype_id, university_name, personinfo_ref_no, academic_type_id', 'safe', 'on'=>'search'),
+			array('id, university_name, personinfo_ref_no, academic_type_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +59,6 @@ class Academic extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'academictype_id' => 'Academictype',
 			'university_name' => 'University Name',
 			'personinfo_ref_no' => ' Personinfo Ref No',
 			'academic_type_id' => ' Academic Type',
@@ -87,7 +84,7 @@ class Academic extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('academictype_id',$this->academictype_id);
+		//$criteria->compare('academictype_id',$this->academictype_id);
 		$criteria->compare('university_name',$this->university_name,true);
 		$criteria->compare('personinfo_ref_no',$this->personinfo_ref_no);
 		$criteria->compare('academic_type_id',$this->academic_type_id);

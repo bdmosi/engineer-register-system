@@ -13,8 +13,6 @@
 
                     <?php echo $form->textFieldControlGroup($model,'id',array('span'=>5)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'academictype_id',array('span'=>5)); ?>
-
                     <?php echo $form->textFieldControlGroup($model,'university_name',array('span'=>5,'maxlength'=>255)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'personinfo_ref_no',array('span'=>5)); ?>

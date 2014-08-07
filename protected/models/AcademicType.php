@@ -85,6 +85,10 @@ class AcademicType extends CActiveRecord
 		));
 	}
 
+        public static function getAcademicOptions(){
+            return CHtml::listData(self::model()->findAll(),'id','description');
+        }
+        
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

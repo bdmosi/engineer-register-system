@@ -92,7 +92,7 @@ class PersoninfoController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-                $photoUri = $model->photo;
+                $photoUri = $model->photo;//store the existing photo to remember
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

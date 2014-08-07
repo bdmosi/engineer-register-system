@@ -59,7 +59,13 @@ $this->menu=array(
                     'value'=> $model->erb->description
                 ),
         
+                 array(
+                    'name'=>'personinfo_ref_no',
+                    'value'=>$model->academics->description
+                      ),
+        
 	),
+    
 )); 
 echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
 ?>

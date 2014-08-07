@@ -44,7 +44,7 @@ class MaritalStatus extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'personinfos' => array(self::HAS_MANY, 'Personinfo', 'tbl_marital_status_id'),
+			'personinfos' => array(self::HAS_MANY, 'Personinfo', 'marital_status_id'),
 		);
 	}
 

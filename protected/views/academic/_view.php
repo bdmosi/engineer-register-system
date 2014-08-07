@@ -21,9 +21,4 @@
 	<?php echo CHtml::encode($data->personinfo_ref_no); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('academic_type_id')); ?>:</b>
-	<?php echo CHtml::encode($data->academic_type_id); ?>
-	<br />
-
-
-</div>
+	</div>

@@ -9,10 +9,10 @@
  * @property string $employer
  * @property string $location
  * @property string $position
- * @property integer $tbl_personinfo_ref_no
+ * @property integer $personinfo_ref_no
  *
  * The followings are the available model relations:
- * @property Personinfo $tblPersoninfoRefNo
+ * @property Personinfo $PersoninfoRefNo
  */
 class Employment extends CActiveRecord
 {
@@ -32,7 +32,7 @@ class Employment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('occupation, employer, location, position, tbl_personinfo_ref_no', 'required'),
+			array('occupation, employer, location, position, personinfo_ref_no', 'required'),
 			array('personinfo_ref_no', 'numerical', 'integerOnly'=>true),
 			array('occupation, employer, location, position', 'length', 'max'=>255),
 			// The following rule is used by search().

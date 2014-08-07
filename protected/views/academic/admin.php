@@ -6,12 +6,15 @@
 $this->breadcrumbs=array(
 	'Academics'=>array('index'),
 	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List Academic', 'url'=>array('index')),
-	array('label'=>'Create Academic', 'url'=>array('create')),
-);
+);          
+            
+         /*
+            $this->menu=array(
+                    array('label'=>'List Academic', 'url'=>array('index')),
+                    array('label'=>'Create Academic', 'url'=>array('create')),
+            );
+             
+         */
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -48,7 +51,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'academictype_id',
 		'university_name',
 		'personinfo_ref_no',
 		'academic_type_id',

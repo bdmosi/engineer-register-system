@@ -19,13 +19,11 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'academictype_id',array('span'=>5)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'university_name',array('span'=>5,'maxlength'=>255)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'personinfo_ref_no',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'academic_type_id',array('span'=>5)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'academic_type_id', AcademicType::getAcademicOptions(),array('empty' => '--Select--')); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(

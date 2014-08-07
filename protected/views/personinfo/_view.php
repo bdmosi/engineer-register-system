@@ -21,12 +21,38 @@
 	<?php echo CHtml::encode($data->sname); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('dob')); ?>:</b>
-	<?php echo CHtml::encode($data->dob); ?>
+	<b><?php echo CHtml::activeLabel($model,'dob'); ?>:</b>
+	<?php $this->widget('zii.widgets.jui.CJuiDatePicker',
+                              array(
+                                    'model'=>$model,
+                                    'attribute'=>'dob',
+                                    //'flat'=>true,//remove to hide the datepicker
+                                    'options'=>array(
+                                        'showAnim'=>'slide',//'slide','fold','slideDown','fadeIn','blind','bounce','clip','drop'
+                                        'showOn'=>both,
+                                        'showOtherMonths'=>true,// Show Other month in jquery
+                                        'selectOtherMonths'=>true,// Select Other month in jquery
+                                        'dateFormat' => 'yy-mm-dd',
+                                        'changeMonth'=>true,
+                                        'changeYear'=>true,
+                                        'yearRange'=>'100:+0',
+                                       // 'minDate' => '1900-01-01',      // minimum date
+                                        //'maxDate' => '2099-12-31',      // maximum date
+                                        'ButtonText'=>'please select the date',
+                                        'ButtonImage'=>Yii::app()->request->basePath."/images/calender.png",
+                                        'ButtonImageOnly'=>true,
+                                  ),
+                                    'htmlOptions'=>array(
+                                        'style'=>'height:25px;',
+                                    ),
+                                ));
+        
+        ?>
+        <?php echo CHtml::error($model,'dob'); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('place_birth')); ?>:</b>
-	<?php echo CHtml::encode($data->place_birth); ?>
+	<?php echo CHtml::encode($data->place_birth); ?><?
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nationality')); ?>:</b>
