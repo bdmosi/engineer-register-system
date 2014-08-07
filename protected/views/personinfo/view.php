@@ -11,11 +11,11 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'List Personinfo', 'url'=>array('index')),
-        array('label'=>'view Personinfo', 'url'=>array('view', 'id'=>$model->ref_no)),
+       // array('label'=>'view Personinfo', 'url'=>array('view', 'id'=>$model->ref_no)),
 	//array('label'=>'Create Personinfo', 'url'=>array('create')),
 	array('label'=>'Update Personinfo', 'url'=>array('update', 'id'=>$model->ref_no)),
 	//array('label'=>'Delete Personinfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ref_no),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Personinfo', 'url'=>array('admin', 'id'=>$model->ref_no)),
+	//array('label'=>'Manage Personinfo', 'url'=>array('admin', 'id'=>$model->ref_no)),
 );
 ?>
 

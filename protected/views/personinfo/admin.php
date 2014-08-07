@@ -8,10 +8,10 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Personinfo', 'url'=>array('index')),
-	array('label'=>'Create Personinfo', 'url'=>array('create')),
-);
+//$this->menu=array(
+	//array('label'=>'List Personinfo', 'url'=>array('index')),
+	//array('label'=>'Create Personinfo', 'url'=>array('create')),
+//);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -49,15 +49,13 @@ $('.search-form form').submit(function(){
 		'dob',
 		'place_birth',
 		'nationality',
-		/*
-                'photo',
+                //'photo',
 		'house_tel',
 		'office_tel',
 		'mobile',
 		'sex_id',
 		'marital_status_id',
 		'erb_id',
-            */
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

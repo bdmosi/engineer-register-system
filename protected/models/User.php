@@ -116,6 +116,7 @@ class User extends CActiveRecord
 	}
         
         public function equalsPassword(){
+            //hash password is a dynamic method instances use $this to refer to it
             if($this->hashPassword($this->confirmPassword)==$this->password){
               return true;  
             }
