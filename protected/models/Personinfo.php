@@ -46,7 +46,7 @@ class Personinfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile', 'required','on'=>'update'),
+			array('surname, fname, sname, dob, place_birth, nationality, house_tel, office_tel, mobile', 'required','on'=>'update'),
 			array('sex_id, marital_status_id,erb_id', 'numerical', 'integerOnly'=>true),
 			array('surname, fname, sname, place_birth, nationality, photo, house_tel, office_tel, mobile', 'length', 'max'=>255,'on'=>'update'),
 			// The following rule is used by search().

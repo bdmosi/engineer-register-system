@@ -60,4 +60,6 @@ $this->menu=array(
                 ),
         
 	),
-)); ?>
+)); 
+echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
+?>
