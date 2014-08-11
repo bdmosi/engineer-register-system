@@ -60,10 +60,10 @@ class AcademicController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($ref_no)
 	{
 		$model=new Academic;
-
+                $model->personinfo_ref_no = $ref_no;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -74,7 +74,7 @@ class AcademicController extends Controller
 			}
 		}
 
-		$this->render('create',array(
+		$this->renderPartial('_form',array(
 			'model'=>$model,
 		));
 	}

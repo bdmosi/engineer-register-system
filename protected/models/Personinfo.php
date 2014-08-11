@@ -63,8 +63,7 @@ class Personinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                        //'AcademicType' => array(self::BELONGS_TO, 'AcademicType', 'academic_type_id'),
-			'academics' => array(self::HAS_MANY, 'Academic', 'personinfo_ref_no'),
+                        'academics' => array(self::HAS_MANY, 'Academic', 'personinfo_ref_no'),
 			'employments' => array(self::HAS_MANY, 'Employment', 'personinfo_ref_no'),
 			'experiences' => array(self::HAS_MANY, 'Experience', 'personinfo_ref_no'),
 			'personMemberships' => array(self::HAS_MANY, 'PersonMembership', 'personinfo_ref_no'),

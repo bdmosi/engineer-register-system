@@ -31,7 +31,7 @@ class Recomendation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('referee_name, referee_email, address, tbl_personinfo_ref_no', 'required'),
+			array('referee_name, referee_email, address,personinfo_ref_no', 'required'),
 			array('personinfo_ref_no', 'numerical', 'integerOnly'=>true),
 			array('referee_name, referee_email, address', 'length', 'max'=>255),
 			// The following rule is used by search().

@@ -47,8 +47,8 @@ class Academic extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'PersoninfoRefNo' => array(self::BELONGS_TO, 'Personinfo', 'personinfo_ref_no'),
-			'AcademicType' => array(self::BELONGS_TO, 'AcademicType', 'academic_type_id'),
+			'personInfo' => array(self::BELONGS_TO, 'Personinfo', 'personinfo_ref_no'),
+			'academicType' => array(self::BELONGS_TO, 'AcademicType', 'academic_type_id'),
 		);
 	}
 
@@ -84,7 +84,6 @@ class Academic extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		//$criteria->compare('academictype_id',$this->academictype_id);
 		$criteria->compare('university_name',$this->university_name,true);
 		$criteria->compare('personinfo_ref_no',$this->personinfo_ref_no);
 		$criteria->compare('academic_type_id',$this->academic_type_id);
@@ -94,10 +93,7 @@ class Academic extends CActiveRecord
 		));
 	}
         
-        public static function getAcademicOptions(){
-            return CHtml::listData(self::model()->findAll(),'id','description');
-        }
-        
+             
 
 	/**
 	 * Returns the static model of the specified AR class.

@@ -31,7 +31,7 @@ $this->menu=array(
 <?php
      echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
 ?>
-    
+        
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
         'class' => 'table table-striped table-condensed table-hover',
@@ -77,7 +77,8 @@ $this->menu=array(
 
 ?>
 
-<?php echo TbHtml::pageHeader('', 'Employment', array())?><?php
+<?php echo TbHtml::pageHeader('', 'Employment', array())?>
+    <?php
       echo TbHtml::link('Add New',$this->createUrl('/employment/create',
              array('id'=>$model->ref_no)),
              array(
@@ -85,7 +86,7 @@ $this->menu=array(
                  'onclick'=>'openEmpForm();return false;'
                  )
              );
-?>
+    ?>
     
     <script type="text/javascript">
         function openEmpForm(){
@@ -140,5 +141,119 @@ foreach($model->employments as $employment){
 }
 
 ?>
+    
+    <?php echo TbHtml::pageHeader('', 'Academic', array())?>
+    <?php
+      echo TbHtml::link('Add New',$this->createUrl('/academic/create',
+             array('id'=>$model->ref_no)),
+             array(
+                 'class'=>'btn btn-primary',
+                 'onclick'=>'openAcaForm();return false;'
+                 )
+             );
+    ?>
+    
+    <script type="text/javascript">
+        function openAcaForm(){
+            $.get("<?php echo $this->createUrl('/academic/create',array('ref_no'=>$model->ref_no));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#aca-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="aca-form"></div>
+<?php 
+
+foreach($model->academics as $academic){
+    //echo $employment->occupation."<br />";
+    
+    $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$academic,
+    'attributes'=>array(
+		
+                array(
+                    'name'=>'university_name',
+                    'value'=>$academic->university_name
+                ),
+                array(
+                    'name'=>'academic_type_id',
+                    'value'=> $academic->academicType->description
+                ),
+
+        
+	),
+    
+)); 
+
+}
+
+?>
+    
+    <?php echo TbHtml::pageHeader('', 'Recomendation', array())?>
+    <?php
+      echo TbHtml::link('Add New',$this->createUrl('/recomendation/create',
+             array('id'=>$model->ref_no)),
+             array(
+                 'class'=>'btn btn-primary',
+                 'onclick'=>'openRecForm();return false;'
+                 )
+             );
+    ?>
+    
+    <script type="text/javascript">
+        function openRecForm(){
+            $.get("<?php echo $this->createUrl('/recomendation/create',array('ref_no'=>$model->ref_no));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#rec-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="rec-form"></div>
+<?php 
+
+foreach($model->recomendations as $recomendation){
+    //echo $employment->occupation."<br />";
+    
+    $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$recomendation,
+    'attributes'=>array(
+		
+                array(
+                    'name'=>'referee_name',
+                    'value'=>$recomendation->referee_name
+                ),
+                array(
+                    'name'=>'referee_email',
+                    'value'=>$recomendation->referee_email
+                ),
+                array(
+                    'name'=>'address',
+                    'value'=>$recomendation->address
+                ),
+                      
+	),
+    
+)); 
+
+}
+
+?>
+    
     </div>
         
