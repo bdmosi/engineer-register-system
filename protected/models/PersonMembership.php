@@ -48,7 +48,7 @@ class PersonMembership extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'PersoninfoRefNo' => array(self::BELONGS_TO, 'Personinfo', 'personinfo_ref_no'),
-			'Membership' => array(self::BELONGS_TO, 'Membership', 'membership_id'),
+			'membership' => array(self::BELONGS_TO, 'Membership', 'membership_id'),
 		);
 	}
 

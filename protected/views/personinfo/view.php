@@ -255,5 +255,113 @@ foreach($model->recomendations as $recomendation){
 
 ?>
     
-    </div>
+    <?php echo TbHtml::pageHeader('', 'Experience', array())?>
+    <?php
+      echo TbHtml::link('Add New',$this->createUrl('/experience/create',
+             array('id'=>$model->ref_no)),
+             array(
+                 'class'=>'btn btn-primary',
+                 'onclick'=>'openExpForm();return false;'
+                 )
+             );
+    ?>
+    
+    <script type="text/javascript">
+        function openExpForm(){
+            $.get("<?php echo $this->createUrl('/experience/create',array('ref_no'=>$model->ref_no));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#exp-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="exp-form"></div>
+<?php 
+
+foreach($model->experiences as $experience){
+    
+    $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$employment,
+    'attributes'=>array(
+		
+                array(
+                    'name'=>'expertize',
+                    'value'=>$experience->expertize
+                ),
+	
+               array(
+                    'name'=>'experience_years',
+                    'value'=>$experience->experience_years
+                ),
+                        
+                array(
+                    'name'=>'experience_country',
+                    'value'=>$experience->experience_country
+                ),
+                       
+	),
+    
+)); 
+
+}
+
+?>
+    
+    <?php echo TbHtml::pageHeader('', 'Membership', array())?>
+    <?php
+      echo TbHtml::link('Add New',$this->createUrl('/personMembership/create',
+             array('id'=>$model->ref_no)),
+             array(
+                 'class'=>'btn btn-primary',
+                 'onclick'=>'openMembForm();return false;'
+                 )
+             );
+    ?>
+    
+    <script type="text/javascript">
+        function openMembForm(){
+            $.get("<?php echo $this->createUrl('/personMembership/create',array('ref_no'=>$model->ref_no));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#memb-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="memb-form"></div>
+<?php 
+
+foreach($model->personMemberships as $personMembership){
+    
+    $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$personMembership,
+    'attributes'=>array(
+		
+                array(
+                    'name'=>'membership_id',
+                    'value'=>$personMembership->membership->description
+                ),
+               
+	),
+    
+)); 
+
+}
+
+?>
+    
+   </div>
         

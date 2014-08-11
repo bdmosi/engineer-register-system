@@ -1,6 +1,6 @@
 <?php
 
-class MembershipController extends Controller
+class PersonMembershipController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,13 @@ class MembershipController extends Controller
 	 */
 	public function actionCreate($ref_no)
 	{
-		$model=new Membership;
+		$model=new PersonMembership;
                 $model->personinfo_ref_no = $ref_no;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Membership'])) {
-			$model->attributes=$_POST['Membership'];
+		if (isset($_POST['PersonMembership'])) {
+			$model->attributes=$_POST['PersonMembership'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -92,8 +91,8 @@ class MembershipController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Membership'])) {
-			$model->attributes=$_POST['Membership'];
+		if (isset($_POST['PersonMembership'])) {
+			$model->attributes=$_POST['PersonMembership'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -129,7 +128,7 @@ class MembershipController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Membership');
+		$dataProvider=new CActiveDataProvider('PersonMembership');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -140,10 +139,10 @@ class MembershipController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Membership('search');
+		$model=new PersonMembership('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Membership'])) {
-			$model->attributes=$_GET['Membership'];
+		if (isset($_GET['PersonMembership'])) {
+			$model->attributes=$_GET['PersonMembership'];
 		}
 
 		$this->render('admin',array(
@@ -155,12 +154,12 @@ class MembershipController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Membership the loaded model
+	 * @return PersonMembership the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Membership::model()->findByPk($id);
+		$model=PersonMembership::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -169,11 +168,11 @@ class MembershipController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Membership $model the model to be validated
+	 * @param PersonMembership $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='membership-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='person-membership-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
