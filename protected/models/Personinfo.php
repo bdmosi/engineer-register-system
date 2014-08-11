@@ -30,7 +30,7 @@
  */
 class Personinfo extends CActiveRecord
 {
-	/**
+    /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -63,6 +63,7 @@ class Personinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        //'AcademicType' => array(self::BELONGS_TO, 'AcademicType', 'academic_type_id'),
 			'academics' => array(self::HAS_MANY, 'Academic', 'personinfo_ref_no'),
 			'employments' => array(self::HAS_MANY, 'Employment', 'personinfo_ref_no'),
 			'experiences' => array(self::HAS_MANY, 'Experience', 'personinfo_ref_no'),
@@ -96,6 +97,8 @@ class Personinfo extends CActiveRecord
 			'sex_id' => 'Sex',
 			'marital_status_id' => 'Marital Status',
 			'erb_id' => 'Engineer Registration Board',
+                        //'academic_type_id' => ' Academic Type',
+
 		);
 	}
 
@@ -131,6 +134,7 @@ class Personinfo extends CActiveRecord
 		$criteria->compare('sex_id',$this->sex_id);
 		$criteria->compare('marital_status_id',$this->marital_status_id);
 		$criteria->compare('erb_id',$this->erb_id);
+		//$criteria->compare('academic_type_id',$this->academic_type_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

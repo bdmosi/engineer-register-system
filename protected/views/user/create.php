@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
+	'Users'=>array('personinfo/create'),
 	'Create',
 );
 

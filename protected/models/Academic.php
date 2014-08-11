@@ -93,6 +93,11 @@ class Academic extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public static function getAcademicOptions(){
+            return CHtml::listData(self::model()->findAll(),'id','description');
+        }
+        
 
 	/**
 	 * Returns the static model of the specified AR class.

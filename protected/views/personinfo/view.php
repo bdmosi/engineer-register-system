@@ -20,6 +20,7 @@ $this->menu=array(
 ?>
 
 <h1>View Personinfo <?php //echo $model->ref_no; ?></h1>
+<div id="profile" style="width:500px;">
 <?php
      if(isset($model->photo))
      echo TbHtml::imagePolaroid(Yii::app()->request->baseUrl."/userfiles/profile_photos/{$model->photo}", 'Profile photo',array('style'=>'width:120px;height:120px'));
@@ -27,6 +28,10 @@ $this->menu=array(
      echo TbHtml::imagePolaroid(Yii::app()->request->baseUrl."/userfiles/profile_photos/placeholder.png", 'Profile photo',array('style'=>'width:120px;height:120px'));  
 ?>
 
+<?php
+     echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
+?>
+    
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
         'class' => 'table table-striped table-condensed table-hover',
@@ -43,6 +48,7 @@ $this->menu=array(
 		'house_tel',
 		'office_tel',
 		'mobile',
+                //'academics',
 		//'sex_id',
                 array(
                     'name'=>'sex_id',
@@ -59,13 +65,80 @@ $this->menu=array(
                     'value'=> $model->erb->description
                 ),
         
-                 array(
-                    'name'=>'personinfo_ref_no',
-                    'value'=>$model->academics->description
-                      ),
+//                 array(
+//                    'name'=>'personinfo_ref_no',
+//                    'value'=>$model->academics->description
+//                      ),
+
         
 	),
     
 )); 
-echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
+
 ?>
+
+<?php echo TbHtml::pageHeader('', 'Employment', array())?><?php
+      echo TbHtml::link('Add New',$this->createUrl('/employment/create',
+             array('id'=>$model->ref_no)),
+             array(
+                 'class'=>'btn btn-primary',
+                 'onclick'=>'openEmpForm();return false;'
+                 )
+             );
+?>
+    
+    <script type="text/javascript">
+        function openEmpForm(){
+            $.get("<?php echo $this->createUrl('/employment/create',array('ref_no'=>$model->ref_no));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#emp-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="emp-form"></div>
+<?php 
+
+foreach($model->employments as $employment){
+    //echo $employment->occupation."<br />";
+    
+    $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$employment,
+    'attributes'=>array(
+		
+                array(
+                    'name'=>'occupation',
+                    'value'=>$employment->occupation
+                ),
+		//'marital_status_id',
+                array(
+                    'name'=>'employer',
+                    'value'=> $employment->employer
+                ),
+                        //'erb_id',
+                array(
+                    'name'=>'position',
+                    'value'=> $employment->position
+                ),
+                array(
+                    'name'=>'location',
+                    'value'=> $employment->location
+                ),
+
+        
+	),
+    
+)); 
+
+}
+
+?>
+    </div>
+        

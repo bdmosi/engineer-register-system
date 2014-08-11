@@ -32,10 +32,6 @@
 		'id',
 		'university_name',
 		'personinfo_ref_no',
-		//'academic_type_id',
-                  array(
-                    'name'=>'academic_type_id',
-                    'value'=>$model->AcademicType->description
-                      ),
-	),
+		'academic_type_id',
+                  	),
 )); ?>

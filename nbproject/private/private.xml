@@ -3,26 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/managementsystem/protected/views/user/_form.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/personinfo/_form.php</file>
             <file>file:/var/www/html/managementsystem/protected/controllers/PersoninfoController.php</file>
-            <file>file:/var/www/html/managementsystem/protected/controllers/SiteController.php</file>
-            <file>file:/var/www/html/managementsystem/protected/config/main.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/User.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/user/index.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/personinfo/view.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/employment/view.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/Sex.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/personinfo/_form.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/academic/view.php</file>
             <file>file:/var/www/html/managementsystem/protected/models/Personinfo.php</file>
-            <file>file:/var/www/html/managementsystem/protected/controllers/UserController.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/user/view.php</file>
-            <file>file:/var/www/html/managementsystem/protected/components/UserIdentity.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/layouts/column2.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/layouts/main.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/LoginForm.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/personinfo/admin.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/user/create.php</file>
-            <file>file:/var/www/html/managementsystem/protected/components/ImageResize.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/academic/_form.php</file>
+            <file>file:/var/www/html/managementsystem/protected/models/Academic.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/personinfo/view.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/personinfo/update.php</file>
+            <file>file:/var/www/html/managementsystem/protected/models/AcademicType.php</file>
+            <file>file:/var/www/html/managementsystem/protected/models/Erb.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/academic/admin.php</file>
         </group>
     </open-files>
 </project-private>

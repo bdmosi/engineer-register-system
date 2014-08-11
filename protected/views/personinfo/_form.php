@@ -74,6 +74,9 @@
     
             <?php echo $form->dropDownListControlGroup($model,'erb_id', Erb::getErbOptions(), array('empty' => '--Select--'));?>
 
+           <?php //echo $form->dropDownListControlGroup($model,'academic_type_id', AcademicType::getAcademicOptions(),array('empty' => '--Select--')); ?>
+
+    
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
