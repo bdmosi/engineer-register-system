@@ -85,7 +85,7 @@ $this->menu=array(
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openEmplForm();return false;'
+                 'onclick'=>'openEmpForm();return false;'
                  )
              );
     ?>
@@ -94,11 +94,11 @@ $this->menu=array(
 ?>
     
     <script type="text/javascript">
-        function openEmplForm(){
+        function openEmpForm(){
             $.get("<?php echo $this->createUrl('/employment/create',array('ref_no'=>$model->ref_no));?>",null,
             
                 function(response,status){//anonymous function
-                    $("#empl-form").html(response);
+                    $("#emp-form").html(response);
                 }//callback
                         
             );//get
@@ -106,7 +106,7 @@ $this->menu=array(
         }
     </script> 
 
-    <div id="empl-form"></div>
+    <div id="emp-form"></div>
 <?php 
 
 foreach($model->employments as $employment){
@@ -147,7 +147,7 @@ foreach($model->employments as $employment){
          echo TbHtml::link('Edit',$this->createUrl('/Employment/update',
                  array('id'=>$employment->id)),
                  array('class'=>'btn btn-primary',
-                       'onclick'=>'openEmpForm();return false;'
+                       'onclick'=>'openEmplForm();return false;'
                      )
                  );
                               
@@ -155,11 +155,11 @@ foreach($model->employments as $employment){
 
 ?>
         <script type="text/javascript">
-        function openEmpForm(){
+        function openEmplForm(){
             $.get("<?php echo $this->createUrl('/employment/update',array('id'=>$employment->id));?>",null,
             
                 function(response,status){//anonymous function
-                    $("#emp-form").html(response);
+                    $("#empl-form").html(response);
                 }//callback
                         
             );//get
@@ -167,7 +167,7 @@ foreach($model->employments as $employment){
         }
     </script> 
 
-    <div id="emp-form"></div>
+    <div id="empl-form"></div>
     
     <?php echo TbHtml::pageHeader('', 'Academic', array())?>
     <?php
@@ -374,21 +374,7 @@ foreach($model->experiences as $experience){
 }
 
 ?>
-        <script type="text/javascript">
-        function openExplForm(){
-            $.get("<?php echo $this->createUrl('/experience/update',array('id'=>$experince->id));?>",null,
-            
-                function(response,status){//anonymous function
-                    $("#empl-form").html(response);
-                }//callback
-                        
-            );//get
-            
-        }
-    </script> 
-
-    <div id="emp-form"></div>
-    
+        
     <?php echo TbHtml::pageHeader('', 'Membership', array())?>
     <?php
       echo TbHtml::link('Add New',$this->createUrl('/personMembership/create',
@@ -433,6 +419,11 @@ foreach($model->personMemberships as $personMembership){
 	),
     
 )); 
+    
+     echo TbHtml::link('Edit',$this->createUrl('/personMembership/update',
+             array('id'=>$model->ref_no)),
+             array('class'=>'btn btn-primary'));
+   
 
 }
 

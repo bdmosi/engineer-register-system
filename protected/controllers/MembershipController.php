@@ -60,9 +60,10 @@ class MembershipController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($ref_no)
 	{
 		$model=new Membership;
+                $model->personinfo_ref_no=$ref_no;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -70,7 +71,7 @@ class MembershipController extends Controller
 		if (isset($_POST['Membership'])) {
 			$model->attributes=$_POST['Membership'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$model->id));
 			}
 		}
 
@@ -94,7 +95,7 @@ class MembershipController extends Controller
 		if (isset($_POST['Membership'])) {
 			$model->attributes=$_POST['Membership'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$membership->id));
 			}
 		}
 
