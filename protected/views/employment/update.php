@@ -18,6 +18,7 @@ $this->menu=array(
 );
 ?>
 
-    <h1>Update Employment <?php echo $model->id; ?></h1>
+    <h1>Update Employment Information <?php echo $model->id; ?>
+    </h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

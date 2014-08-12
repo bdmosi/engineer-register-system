@@ -55,7 +55,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+	*/
 	/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',

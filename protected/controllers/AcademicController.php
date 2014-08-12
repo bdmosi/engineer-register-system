@@ -70,7 +70,7 @@ class AcademicController extends Controller
 		if (isset($_POST['Academic'])) {
 			$model->attributes=$_POST['Academic'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$ref_no));
 			}
 		}
 
@@ -87,6 +87,7 @@ class AcademicController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+                 $model->personinfo_ref_no = $ref_no;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -94,11 +95,11 @@ class AcademicController extends Controller
 		if (isset($_POST['Academic'])) {
 			$model->attributes=$_POST['Academic'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$ref_no));
 			}
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('_form',array(
 			'model'=>$model,
 		));
 	}

@@ -6,7 +6,7 @@ class EmploymentController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -70,7 +70,7 @@ class EmploymentController extends Controller
 		if (isset($_POST['Employment'])) {
 			$model->attributes=$_POST['Employment'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$ref_no));
 			}
 		}
 
@@ -89,18 +89,18 @@ class EmploymentController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+               // $model->personinfo_ref_no = $ref_no;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Employment'])) {
 			$model->attributes=$_POST['Employment'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$ref_no));
 			}
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('_form',array(
 			'model'=>$model,
 		));
 	}

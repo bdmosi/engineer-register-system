@@ -70,7 +70,7 @@ class PersonMembershipController extends Controller
 		if (isset($_POST['PersonMembership'])) {
 			$model->attributes=$_POST['PersonMembership'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$ref_no));
 			}
 		}
 

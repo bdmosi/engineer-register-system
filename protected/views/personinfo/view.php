@@ -29,7 +29,9 @@ $this->menu=array(
 ?>
 
 <?php
-     echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
+     echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',
+             array('id'=>$model->ref_no)),
+             array('class'=>'btn btn-primary'));
 ?>
         
 <?php $this->widget('zii.widgets.CDetailView',array(
@@ -83,17 +85,20 @@ $this->menu=array(
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openEmpForm();return false;'
+                 'onclick'=>'openEmplForm();return false;'
                  )
              );
     ?>
+    <?php
+     //echo TbHtml::link('Edit',$this->createUrl('/Employment/update',array('id'=>$model->ref_no)),array('class'=>'btn btn-primary'));
+?>
     
     <script type="text/javascript">
-        function openEmpForm(){
+        function openEmplForm(){
             $.get("<?php echo $this->createUrl('/employment/create',array('ref_no'=>$model->ref_no));?>",null,
             
                 function(response,status){//anonymous function
-                    $("#emp-form").html(response);
+                    $("#empl-form").html(response);
                 }//callback
                         
             );//get
@@ -101,7 +106,7 @@ $this->menu=array(
         }
     </script> 
 
-    <div id="emp-form"></div>
+    <div id="empl-form"></div>
 <?php 
 
 foreach($model->employments as $employment){
@@ -137,10 +142,32 @@ foreach($model->employments as $employment){
 	),
     
 )); 
-
+  ?>
+    <?php
+         echo TbHtml::link('Edit',$this->createUrl('/Employment/update',
+                 array('id'=>$employment->id)),
+                 array('class'=>'btn btn-primary',
+                       'onclick'=>'openEmpForm();return false;'
+                     )
+                 );
+                              
 }
 
 ?>
+        <script type="text/javascript">
+        function openEmpForm(){
+            $.get("<?php echo $this->createUrl('/employment/update',array('id'=>$employment->id));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#emp-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="emp-form"></div>
     
     <?php echo TbHtml::pageHeader('', 'Academic', array())?>
     <?php
@@ -192,10 +219,36 @@ foreach($model->academics as $academic){
 	),
     
 )); 
+    ?>
 
+<?php
+         echo TbHtml::link('Edit',$this->createUrl('/Academic/update',
+                 array('id'=>$academic->id)),
+                 array('class'=>'btn btn-primary',
+                       'onclick'=>'openAcacForm();return false;'
+                     )
+                 );
+                              
 }
 
 ?>
+        <script type="text/javascript">
+        function openAcacForm(){
+            $.get("<?php echo $this->createUrl('/academic/update',array('id'=>$academic->id));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#acac-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="acac-form"></div>
+    
+
+
     
     <?php echo TbHtml::pageHeader('', 'Recomendation', array())?>
     <?php
@@ -309,10 +362,32 @@ foreach($model->experiences as $experience){
 	),
     
 )); 
-
+?>
+    <?php
+         echo TbHtml::link('Edit',$this->createUrl('/Experience/update',
+                 array('id'=>$experience->id)),
+                 array('class'=>'btn btn-primary',
+                       'onclick'=>'openExplForm();return false;'
+                     )
+                 );
+                              
 }
 
 ?>
+        <script type="text/javascript">
+        function openExplForm(){
+            $.get("<?php echo $this->createUrl('/experience/update',array('id'=>$experince->id));?>",null,
+            
+                function(response,status){//anonymous function
+                    $("#empl-form").html(response);
+                }//callback
+                        
+            );//get
+            
+        }
+    </script> 
+
+    <div id="emp-form"></div>
     
     <?php echo TbHtml::pageHeader('', 'Membership', array())?>
     <?php
