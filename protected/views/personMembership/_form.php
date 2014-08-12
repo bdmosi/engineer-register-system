@@ -21,12 +21,12 @@
 
             <?php echo $form->hiddenField($model,'personinfo_ref_no',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'membership_id',array('span'=>5)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'membership_id', Membership::getMembershipOptions(),array('empty' => '--Select--')); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
+		    'size'=>TbHtml::BUTTON_SIZE_MINI,
 		)); ?>
     </div>
 

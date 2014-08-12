@@ -58,6 +58,10 @@ class Membership extends CActiveRecord
 			'description' => 'Description',
 		);
 	}
+        
+        public static function getMembershipOptions(){
+            return CHtml::listData(self::model()->findAll(),'id','description');
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

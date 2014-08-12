@@ -30,7 +30,9 @@ class User extends CActiveRecord
 		return array(
 			array('username, password, email', 'required'),
 			array('username, password, email', 'length', 'max'=>255),
-                        array('confirmPassword','equalsPassword'),
+                        //array('email','match','pattern'=>'/[a-zA-Z0-9_.+]+@[a-zA-Z0-9]+.[a-zA-Z]+/','message'=>'Invalid email'),
+                        array('email','email'),
+                    array('confirmPassword','equalsPassword'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, email', 'safe', 'on'=>'search'),

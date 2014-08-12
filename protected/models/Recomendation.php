@@ -34,6 +34,7 @@ class Recomendation extends CActiveRecord
 			array('referee_name, referee_email, address,personinfo_ref_no', 'required'),
 			array('personinfo_ref_no', 'numerical', 'integerOnly'=>true),
 			array('referee_name, referee_email, address', 'length', 'max'=>255),
+                        array('referee_email','match','pattern'=>'/[a-zA-Z0-9_.+]+@[a-zA-Z0-9]+.[a-zA-Z]+/','message'=>'Invalid email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, referee_name, referee_email, address,personinfo_ref_no', 'safe', 'on'=>'search'),

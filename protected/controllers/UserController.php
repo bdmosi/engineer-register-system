@@ -80,7 +80,7 @@ class UserController extends Controller
                                 $profile = new Personinfo();
                                 $profile->ref_no = $model->id;
                                 if($profile->save()){
-				   $this->redirect(array('','id'=>$model->id));
+				   $this->redirect(array('personinfo/view','id'=>$model->id));
                                     //$this->redirect(Yii::app()->homeUrl);
                                 }
 			}
