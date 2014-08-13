@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/managementsystem/protected/controllers/PersoninfoController.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/personinfo/_form.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/academic/view.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/Personinfo.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/academic/_form.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/Academic.php</file>
+            <file>file:/var/www/html/managementsystem/protected/controllers/MembershipController.php</file>
+            <file>file:/var/www/html/managementsystem/protected/controllers/EmploymentController.php</file>
+            <file>file:/var/www/html/managementsystem/protected/controllers/ExperienceController.php</file>
             <file>file:/var/www/html/managementsystem/protected/views/personinfo/view.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/personinfo/update.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/AcademicType.php</file>
-            <file>file:/var/www/html/managementsystem/protected/models/Erb.php</file>
-            <file>file:/var/www/html/managementsystem/protected/views/academic/admin.php</file>
+            <file>file:/var/www/html/managementsystem/protected/controllers/PersonMembershipController.php</file>
         </group>
     </open-files>
 </project-private>

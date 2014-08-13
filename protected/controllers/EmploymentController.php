@@ -88,6 +88,7 @@ class EmploymentController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+             
 		$model=$this->loadModel($id);
                // $model->personinfo_ref_no = $ref_no;
 		// Uncomment the following line if AJAX validation is needed
@@ -96,7 +97,7 @@ class EmploymentController extends Controller
 		if (isset($_POST['Employment'])) {
 			$model->attributes=$_POST['Employment'];
 			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$ref_no));
+				$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
 			}
 		}
 

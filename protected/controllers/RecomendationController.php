@@ -94,11 +94,11 @@ class RecomendationController extends Controller
 		if (isset($_POST['Recomendation'])) {
 			$model->attributes=$_POST['Recomendation'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
 			}
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('_form',array(
 			'model'=>$model,
 		));
 	}

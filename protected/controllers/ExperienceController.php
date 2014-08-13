@@ -94,7 +94,7 @@ class ExperienceController extends Controller
 		if (isset($_POST['Experience'])) {
 			$model->attributes=$_POST['Experience'];
 			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$model->id));
+				$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
 			}
 		}
 
