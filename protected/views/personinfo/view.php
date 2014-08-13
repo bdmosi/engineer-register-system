@@ -163,12 +163,13 @@ foreach($model->employments as $employment){
             
         }
     </script> 
+    <div id="empl-form"></div>
 
 <?php                          
 }
 ?>
 
-    <div id="empl-form"></div>
+  
 
     
     <?php echo TbHtml::pageHeader('', 'Academic', array())?>

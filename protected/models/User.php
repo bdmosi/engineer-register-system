@@ -28,11 +28,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>255),
+			array('username, password,confirmPassword, email', 'required'),
+			array('username, password,confirmPassword, email', 'length', 'max'=>255),
                         //array('email','match','pattern'=>'/[a-zA-Z0-9_.+]+@[a-zA-Z0-9]+.[a-zA-Z]+/','message'=>'Invalid email'),
                         array('email','email'),
-                    array('confirmPassword','equalsPassword'),
+                        array('confirmPassword','equalsPassword'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, email', 'safe', 'on'=>'search'),
@@ -106,7 +106,12 @@ class User extends CActiveRecord
 	{
             return $this->hashPassword($password) == $this->password;
 	}
-	
+       /* 
+        public function validateConfirmPassword($confirmPassword)
+	{
+            return $this->hashConfirmPassword($confirmPassword) == $this->confirmPassword;
+	}
+	*/
 	/*
          *storing a hash password in your database 
          *instead of plain password helping in validating the entered password by user
@@ -116,7 +121,7 @@ class User extends CActiveRecord
         {
             return sha1($password);
 	}
-        
+               
         public function equalsPassword(){
             //hash password is a dynamic method instances use $this to refer to it
             if($this->hashPassword($this->confirmPassword)==$this->password){
