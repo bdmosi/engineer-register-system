@@ -60,7 +60,7 @@ class EmploymentController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($ref_no)
+	public function actionCreate()
 	{
 		$model=new Employment;
                 $model->personinfo_ref_no = $ref_no;
@@ -74,11 +74,9 @@ class EmploymentController extends Controller
 			}
 		}
 
-//		$this->render('create',array(
-//			'model'=>$model,
-//		));
-                
-                $this->renderPartial('_form',array('model'=>$model,));
+		$this->renderPartial('_form',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -88,9 +86,8 @@ class EmploymentController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-             
 		$model=$this->loadModel($id);
-               // $model->personinfo_ref_no = $ref_no;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

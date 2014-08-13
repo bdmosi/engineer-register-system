@@ -8,10 +8,10 @@ $this->breadcrumbs=array(
 	'Employments',
 );
 
-//$this->menu=array(
-//	array('label'=>'Create Employment','url'=>array('create')),
-//	array('label'=>'Manage Employment','url'=>array('admin')),
-//);
+$this->menu=array(
+	array('label'=>'Create Employment','url'=>array('create')),
+	array('label'=>'Manage Employment','url'=>array('admin')),
+);
 ?>
 
 <h1>Employments</h1>

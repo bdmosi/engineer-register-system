@@ -106,13 +106,8 @@ class User extends CActiveRecord
 	{
             return $this->hashPassword($password) == $this->password;
 	}
-       /* 
-        public function validateConfirmPassword($confirmPassword)
-	{
-            return $this->hashConfirmPassword($confirmPassword) == $this->confirmPassword;
-	}
-	*/
-	/*
+      
+        /*
          *storing a hash password in your database 
          *instead of plain password helping in validating the entered password by user
 	 *Through using hashPassword() method	

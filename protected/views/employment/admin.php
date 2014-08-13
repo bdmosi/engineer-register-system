@@ -53,6 +53,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'location',
 		'position',
 		'personinfo_ref_no',
+		/*
+		'date_from',
+		'date_to',
+		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

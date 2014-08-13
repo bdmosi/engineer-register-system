@@ -29,5 +29,15 @@
 	<?php echo CHtml::encode($data->personinfo_ref_no); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('date_from')); ?>:</b>
+	<?php echo CHtml::encode($data->date_from); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('date_to')); ?>:</b>
+	<?php echo CHtml::encode($data->date_to); ?>
+	<br />
+
+	*/ ?>
 
 </div>

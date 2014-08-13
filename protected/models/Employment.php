@@ -10,9 +10,11 @@
  * @property string $location
  * @property string $position
  * @property integer $personinfo_ref_no
+ * @property string $date_from
+ * @property string $date_to
  *
  * The followings are the available model relations:
- * @property Personinfo $PersoninfoRefNo
+ * @property Personinfo $personinfoRefNo
  */
 class Employment extends CActiveRecord
 {
@@ -35,9 +37,10 @@ class Employment extends CActiveRecord
 			array('occupation, employer, location, position, personinfo_ref_no', 'required'),
 			array('personinfo_ref_no', 'numerical', 'integerOnly'=>true),
 			array('occupation, employer, location, position', 'length', 'max'=>255),
+			array('date_from, date_to', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, occupation, employer, location, position, personinfo_ref_no', 'safe', 'on'=>'search'),
+			array('id, occupation, employer, location, position, personinfo_ref_no, date_from, date_to', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,7 +52,7 @@ class Employment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'PersoninfoRefNo' => array(self::BELONGS_TO, 'Personinfo', 'personinfo_ref_no'),
+			'personinfoRefNo' => array(self::BELONGS_TO, 'Personinfo', 'personinfo_ref_no'),
 		);
 	}
 
@@ -64,7 +67,9 @@ class Employment extends CActiveRecord
 			'employer' => 'Employer',
 			'location' => 'Location',
 			'position' => 'Position',
-			'personinfo_ref_no' => ' Personinfo Ref No',
+			'personinfo_ref_no' => 'Personinfo Ref No',
+			'date_from' => 'Date From',
+			'date_to' => 'Date To',
 		);
 	}
 
@@ -92,6 +97,8 @@ class Employment extends CActiveRecord
 		$criteria->compare('location',$this->location,true);
 		$criteria->compare('position',$this->position,true);
 		$criteria->compare('personinfo_ref_no',$this->personinfo_ref_no);
+		$criteria->compare('date_from',$this->date_from,true);
+		$criteria->compare('date_to',$this->date_to,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

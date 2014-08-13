@@ -135,6 +135,15 @@ foreach($model->employments as $employment){
                     'name'=>'location',
                     'value'=> $employment->location
                 ),
+                array(
+                    'name'=>'date_from',
+                    'value'=> $employment->date_from
+                ),
+                 array(
+                    'name'=>'date_to',
+                    'value'=> $employment->date_to
+                ),
+        
 
         
 	),

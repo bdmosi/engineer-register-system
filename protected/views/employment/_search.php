@@ -23,6 +23,10 @@
 
                     <?php echo $form->textFieldControlGroup($model,'personinfo_ref_no',array('span'=>5)); ?>
 
+                    <?php echo $form->textFieldControlGroup($model,'date_from',array('span'=>5)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'date_to',array('span'=>5)); ?>
+
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
     </div>
