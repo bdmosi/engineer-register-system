@@ -8,11 +8,15 @@
  * @property string $username
  * @property string $password
  * @property string $email
+ * @property string $status
+ * @property string $lastlogin
+ * @property integer $loginCounter
  */
 class User extends CActiveRecord
 {
-        public $confirmPassword;
-	/**
+    
+    public $confirmPassword;
+    /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -28,14 +32,15 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password,confirmPassword, email', 'required'),
+			array('username, password, confirmPassword, email', 'required'),
+			array('loginCounter', 'numerical', 'integerOnly'=>true),
 			array('username, password,confirmPassword, email', 'length', 'max'=>255),
-                        //array('email','match','pattern'=>'/[a-zA-Z0-9_.+]+@[a-zA-Z0-9]+.[a-zA-Z]+/','message'=>'Invalid email'),
+			array('status', 'length', 'max'=>20),
                         array('email','email'),
                         array('confirmPassword','equalsPassword'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email', 'safe', 'on'=>'search'),
+			array('id, username, password, confirmPassword, email, status, lastlogin, loginCounter', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +65,9 @@ class User extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'email' => 'Email',
+			'status' => 'Status',
+			'lastlogin' => 'Lastlogin',
+			'loginCounter' => 'Login Counter',
 		);
 	}
 
@@ -85,22 +93,15 @@ class User extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('status',$this->status,true);
+		$criteria->compare('lastlogin',$this->lastlogin,true);
+		$criteria->compare('loginCounter',$this->loginCounter);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return User the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+        
         
         public function validatePassword($password)
 	{
@@ -126,4 +127,14 @@ class User extends CActiveRecord
             return false;
         }
 
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return User the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
 }

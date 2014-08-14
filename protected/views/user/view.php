@@ -27,8 +27,11 @@ $this->menu=array(
     'data'=>$model,
     'attributes'=>array(
 		'id',
-		'email',
+		'username',
 		'password',
-		
+		'email',
+		'status',
+		'lastlogin',
+		'loginCounter',
 	),
 )); ?>

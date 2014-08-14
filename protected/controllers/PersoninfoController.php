@@ -33,7 +33,7 @@ class PersoninfoController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -114,9 +114,15 @@ class PersoninfoController extends Controller
                                 $photo->saveAs(Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo);
                                 $imgObj = new ImageResize (Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo);
                                 $imgObj -> resizeImage('120','120', 'crop');
-                                $imgObj -> saveImage(Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo,100);
+                                $imgObj -> saveImage(Yii::app()->basePath.'/../userfiles/profile_photos/'.$model->photo,100);                                
                             }
-				$this->redirect(array('view','id'=>$model->ref_no));
+                            if(!Yii::app()->user->getState('active')){
+                               $user = User::model()->findByPk(array('id'=> $model->ref_no));                              
+                                $user->status = 1;  
+                                $user->save();
+				$this->redirect(array('view','id'=>$model->ref_no));  
+                            }
+                              
 			}
 		}
 

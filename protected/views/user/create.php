@@ -5,17 +5,14 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Users'=>array('personinfo/create'),
+	'Users'=>array('index'),
 	'Create',
 );
 
-        /*
-             $this->menu=array(
-                         array('label'=>'List User', 'url'=>array('index')),
-                         array('label'=>'Manage User', 'url'=>array('admin')),
-        );
-
-         */
+//$this->menu=array(
+//	array('label'=>'List User', 'url'=>array('index')),
+//	array('label'=>'Manage User', 'url'=>array('admin')),
+//);
 ?>
 
 <h1>Sign up</h1>

@@ -19,16 +19,22 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>255)); ?>
+            <?php echo $form->textFieldControlGroup($model,'email',array('span'=>2,'maxlength'=>255)); ?>
 
-            <?php echo $form->passwordFieldControlGroup($model,'password',array('span'=>3,'maxlength'=>255)); ?>
+            <?php echo $form->passwordFieldControlGroup($model,'password',array('span'=>2,'maxlength'=>255)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'confirmPassword',array('span'=>3,'maxlength'=>255)); ?>
+            <?php echo $form->passwordFieldControlGroup($model,'confirmPassword',array('span'=>2,'maxlength'=>255)); ?>
+
+            <?php echo $form->hiddenField($model,'status',array('span'=>5,'maxlength'=>20)); ?>
+
+            <?php echo $form->hiddenField($model,'lastlogin',array('span'=>5)); ?>
+
+            <?php echo $form->hiddenField($model,'loginCounter',array('span'=>5)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
+		    'size'=>TbHtml::BUTTON_SIZE_MINI,
 		)); ?>
     </div>
 

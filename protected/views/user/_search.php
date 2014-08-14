@@ -17,6 +17,12 @@
 
                             <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>255)); ?>
 
+                    <?php echo $form->textFieldControlGroup($model,'status',array('span'=>5,'maxlength'=>20)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'lastlogin',array('span'=>5)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'loginCounter',array('span'=>5)); ?>
+
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
     </div>

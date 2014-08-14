@@ -6,7 +6,7 @@ class UserController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	//public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -25,30 +25,30 @@ class UserController extends Controller
 	 * @return array access control rules
 	 */
 	public function accessRules()
-	{
-		return array(
-                        array('deny',
-                            'actions'=>array('create'),
-                            'users'=>array('@')
-                        ),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
-				'users'=>array('*'),
-			),
-                        
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+        {
+            return array(
+               array('deny',
+                    'actions'=>array('create'),
+                    'users'=>array('@')
+            ),
+                array('allow', // allow all users to perform 'index' and 'view' actions
+                        'actions'=>array('index','view','create'),
+                        'users'=>array('*'),
+                    ),
+                array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                        'actions'=>array('update'),
+                        'users'=>array('@'),
+             ),
+                array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                        'actions'=>array('admin','delete'),
+                        'users'=>array('admin'),
+             ),
+                array('deny', // deny all users
+                'users'=>array('*'),
+                 ),
+           );
+        }
+
 
 	/**
 	 * Displays a particular model.
@@ -72,24 +72,26 @@ class UserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['User'])) {
-			$model->attributes=$_POST['User'];
-                        $model->username = $model->email;
-                        $model->password = $model->hashPassword($model->password);
-			if ($model->save()) {
-                                $profile = new Personinfo();
-                                $profile->ref_no = $model->id;
-                                if($profile->save()){
-				   $this->redirect(array('personinfo/view','id'=>$model->id));
-                                    //$this->redirect(Yii::app()->homeUrl);
-                                }
-			}
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
+		if (isset($_POST['User'])) 
+                 {
+                        $model->attributes=$_POST['User'];
+                          $model->username = $model->email;
+                            $model->password = $model->hashPassword($model->password);
+                     if ($model->save()) 
+                      {
+                          $profile = new Personinfo();
+                           $profile->ref_no = $model->id;
+                         if($profile->save())
+                          {
+                            $this->redirect(array('personinfo/update','id'=>$model->id));
+                            //$this->redirect(Yii::app()->homeUrl);
+                           }
+                       }
+                 }
+                    $this->render('create',array(
+                    'model'=>$model,
+                    ));
+       }
 
 	/**
 	 * Updates a particular model.

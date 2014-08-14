@@ -9,7 +9,7 @@
 	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('username')); ?>:</b>
 	<?php echo CHtml::encode($data->username); ?>
 	<br />
 
@@ -17,8 +17,20 @@
 	<?php echo CHtml::encode($data->password); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('confirmPassword')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
+	<?php echo CHtml::encode($data->status); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('lastlogin')); ?>:</b>
+	<?php echo CHtml::encode($data->lastlogin); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('loginCounter')); ?>:</b>
+	<?php echo CHtml::encode($data->loginCounter); ?>
 	<br />
 
 
