@@ -63,7 +63,7 @@ class EmploymentController extends Controller
 	public function actionCreate()
 	{
 		$model=new Employment;
-                $model->personinfo_ref_no = $ref_no;
+               // $model->personinfo_ref_no = $ref_no;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -75,7 +75,7 @@ class EmploymentController extends Controller
 		}
 
 		$this->renderAjax('_form',array(
-			'model'=>$model
+			'model'=>$model,
 		));
 	}
 
