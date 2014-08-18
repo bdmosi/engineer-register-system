@@ -20,17 +20,21 @@ class UserIdentity extends CUserIdentity
 	{
 		$username=strtolower($this->username);
 	        $user=User::model()->find('LOWER(username)=?',array($username));
-               // echo '<pre>';print_r($user);die('Duuuuh');
                 
 	     if($user===null)
 		  $this->errorCode=self::ERROR_USERNAME_INVALID;
-	     else if(!$user->validatePassword($this->password))
+	     else if(!$user->validatePassword($this->password)){
       	          $this->errorCode=self::ERROR_PASSWORD_INVALID;
+                 // $user->loginCounter = $user->loginCounter + 1;
+                  //$user->save();
+             }
 
 	     else{
 		    $this->_id=$user->id;
 		    $this->username=$user->username;
 		    $this->errorCode=self::ERROR_NONE;
+                    $user->loginCounter = $user->loginCounter + 1;
+                    $user->save();
                     Yii::app()->user->setState('user_id',$user->id);
                     if($user->status == 1){
                      Yii::app()->user->setState('active',True); 

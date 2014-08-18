@@ -29,7 +29,7 @@ $this->menu=array(
 ?>
 
 <?php
-     echo TbHtml::link('Edit',$this->createUrl('/personinfo/update',
+     echo TbHtml::link('Edit',$this->createUrl('/Personinfo/update',
              array('id'=>$model->ref_no)),
              array('class'=>'btn btn-primary'));
 ?>

@@ -119,10 +119,9 @@ class PersoninfoController extends Controller
                             if(!Yii::app()->user->getState('active')){
                                $user = User::model()->findByPk(array('id'=> $model->ref_no));                              
                                 $user->status = 1;  
-                                $user->save();
-				$this->redirect(array('view','id'=>$model->ref_no));  
+                                $user->save();				
                             }
-                              
+                           $this->redirect(array('view','id'=>$model->ref_no));     
 			}
 		}
 

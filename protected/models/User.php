@@ -32,12 +32,12 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, confirmPassword, email', 'required'),
+			array('username, password, confirmPassword, email', 'required','on' => 'create'),
 			array('loginCounter', 'numerical', 'integerOnly'=>true),
 			array('username, password,confirmPassword, email', 'length', 'max'=>255),
 			array('status', 'length', 'max'=>20),
                         array('email','email'),
-                        array('confirmPassword','equalsPassword'),
+                        array('confirmPassword','equalsPassword','on' => 'create'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, confirmPassword, email, status, lastlogin, loginCounter', 'safe', 'on'=>'search'),

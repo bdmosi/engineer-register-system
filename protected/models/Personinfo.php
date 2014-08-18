@@ -51,7 +51,7 @@ class Personinfo extends CActiveRecord
 			array('surname, fname, sname, place_birth, nationality, photo, house_tel, office_tel, mobile', 'length', 'max'=>255,'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ref_no, surname, fname, sname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile, sex_id, erb_id, sex_id, marital_status_id, erb_id', 'safe', 'on'=>'search'),
+			array('ref_no, surname, fname, dob, place_birth, nationality, photo, house_tel, office_tel, mobile, sex_id, erb_id, sex_id, marital_status_id, erb_id', 'safe', 'on'=>'search'),
 		);
 	}
 
