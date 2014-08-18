@@ -20,7 +20,7 @@ $this->menu=array(
 ?>
 
 <h1>View Personinfo <?php //echo $model->ref_no; ?></h1>
-<div id="profile" style="width:500px;">
+<div id="profile" style="width:1110px;">
 <?php
      if(isset($model->photo))
      echo TbHtml::imagePolaroid(Yii::app()->request->baseUrl."/userfiles/profile_photos/{$model->photo}", 'Profile photo',array('style'=>'width:120px;height:120px'));

@@ -37,7 +37,10 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+    <!-----$this->widget('bootstrap.widgets.TbGridView',array(----->
+        
+    <?php $this->widget('zii.widgets.grid.CGridView', array(
+
 	'id'=>'personinfo-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
