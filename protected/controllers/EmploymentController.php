@@ -74,8 +74,8 @@ class EmploymentController extends Controller
 			}
 		}
 
-		$this->renderPartial('_form',array(
-			'model'=>$model,$return = false, $processOutput = true
+		$this->renderAjax('_form',array(
+			'model'=>$model
 		));
 	}
 
@@ -165,8 +165,21 @@ class EmploymentController extends Controller
 		}
 		return $model;
 	}
+        
+        public function init(){
+            
+            yii::app()->clientScript->registerCoreScript(jquery);
+            yii::app()->clientScript->registerCoreScript(jquery,ui);
+        }
+        
+        public function renderAjax($view,$data=null,$return=false,$processOutput=true)
+                {
+                    Yii::app()->clientscript->scriptMap['jquery.js'] = false;
+                    Yii::app()->clientscript->scriptMap['jquery-ui.min.js'] = false;
+                            $this->renderPartial($view,$data,$return,$processOutput);
+        }
 
-	/**
+        /**
 	 * Performs the AJAX validation.
 	 * @param Employment $model the model to be validated
 	 */
