@@ -168,8 +168,8 @@ class EmploymentController extends Controller
         
         public function init(){
             
-            yii::app()->clientScript->registerCoreScript(jquery);
-            yii::app()->clientScript->registerCoreScript(jquery,ui);
+            yii::app()->clientScript->registerCoreScript("jquery");
+            yii::app()->clientScript->registerCoreScript("jquery.ui");
         }
         
         public function renderAjax($view,$data=null,$return=false,$processOutput=true)
