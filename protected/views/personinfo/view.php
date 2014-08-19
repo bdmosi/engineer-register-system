@@ -85,7 +85,7 @@ $this->menu=array(
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openEmpForm();return false;'
+                 'onclick' => '$("#Add_New").dialog("open"); return false;'
                  )
              );
     ?>
@@ -182,12 +182,13 @@ foreach($model->employments as $employment){
 
     
     <?php echo TbHtml::pageHeader('', 'Academic', array())?>
+  
     <?php
       echo TbHtml::link('Add New',$this->createUrl('/academic/create',
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openAcaForm();return false;'
+                 'onclick' => '$("#Add_New_Aca").dialog("open"); return false;'
                  )
              );
     ?>
@@ -262,12 +263,12 @@ foreach($model->academics as $academic){
 
     
     <?php echo TbHtml::pageHeader('', 'Recomendation', array())?>
-    <?php
+     <?php
       echo TbHtml::link('Add New',$this->createUrl('/recomendation/create',
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openRecForm();return false;'
+                 'onclick' => '$("#Add_New_Rec").dialog("open"); return false;'
                  )
              );
     ?>
@@ -348,7 +349,7 @@ echo TbHtml::link('Edit',$this->createUrl('/Recomendation/update',
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openExpForm();return false;'
+                 'onclick' => '$("#Add_New_Exp").dialog("open"); return false;'
                  )
              );
     ?>
@@ -430,7 +431,7 @@ foreach($model->experiences as $experience){
              array('id'=>$model->ref_no)),
              array(
                  'class'=>'btn btn-primary',
-                 'onclick'=>'openMembForm();return false;'
+                 'onclick' => '$("#Add_New_Memb").dialog("open"); return false;'
                  )
              );
     ?>
@@ -498,4 +499,96 @@ foreach($model->personMemberships as $personMembership){
 ?>
     
    </div>
+
+
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Add_New',
+    'options'=>array(
+        'title'=>'Add New',
+        'width'=>350,
+        'height'=>650,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//employment/_form',array('model' => new Employment(),'profile_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Add_New_Aca',
+    'options'=>array(
+        'title'=>'Add New Academic Information',
+        'width'=>360,
+        'height'=>300,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//academic/_form',array('model' => new Academic(),'prof_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Add_New_Rec',
+    'options'=>array(
+        'title'=>'Add Recommendation Information',
+        'width'=>360,
+        'height'=>300,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//recomendation/_form',array('model' => new Recomendation(),'profile_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Add_New_Exp',
+    'options'=>array(
+        'title'=>'Add New Experience Information',
+        'width'=>400,
+        'height'=>450,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//experience/_form',array('model' => new Experience(),'profil_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Add_New_Memb',
+    'options'=>array(
+        'title'=>'Add New Membership Information',
+        'width'=>400,
+        'height'=>300,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//personMembership/_form',array('model' => new PersonMembership(),'profile_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+   
         

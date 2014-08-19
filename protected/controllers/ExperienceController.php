@@ -60,21 +60,26 @@ class ExperienceController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($ref_no)
+	public function actionCreate()
 	{
 		$model=new Experience;
-                $model->personinfo_ref_no = $ref_no;
+                //$model->personinfo_ref_no = $ref_no;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Experience'])) {
 			$model->attributes=$_POST['Experience'];
 			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$ref_no));
-			}
+			    echo TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, 'Experience record added');
+                          }
+                      else{
+                            echo TbHtml::alert(TbHtml::ALERT_COLOR_ERROR, 'Error: Experience record not added');
+                          }
+                      
+                      Yii::app()->end();
 		}
 
-		$this->renderPartial('_form',array(
+		$this->render('_form',array(
 			'model'=>$model,
 		));
 	}

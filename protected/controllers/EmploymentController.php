@@ -45,6 +45,10 @@ class EmploymentController extends Controller
 		);
 	}
 
+        public function init(){  
+            yii::app()->clientScript->registerCoreScript("jquery");
+            yii::app()->clientScript->registerCoreScript("jquery.ui");
+        }
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -63,21 +67,23 @@ class EmploymentController extends Controller
 	public function actionCreate()
 	{
 		$model=new Employment;
-               // $model->personinfo_ref_no = $ref_no;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if (isset($_POST['Employment'])) {
-			$model->attributes=$_POST['Employment'];
-			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$ref_no));
-			}
-		}
+		      $model->attributes=$_POST['Employment'];
+		      if ($model->save()){                                         
+		         //$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
+                         echo TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, 'Employment record added');
+                      }
+                      else{
+                         echo TbHtml::alert(TbHtml::ALERT_COLOR_ERROR, 'Error: Employment record not added');
+                      }
+                      
+                      Yii::app()->end();
+                }
 
-		$this->renderAjax('_form',array(
+		$this->render('_form',array(
 			'model'=>$model,
 		));
-	}
+        }
 
 	/**
 	 * Updates a particular model.
@@ -91,9 +97,9 @@ class EmploymentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Employment'])) {
+		if (isset($_POST['Employment'])){
 			$model->attributes=$_POST['Employment'];
-			if ($model->save()) {
+			if ($model->save()){
 				$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
 			}
 		}
@@ -166,17 +172,13 @@ class EmploymentController extends Controller
 		return $model;
 	}
         
-        public function init(){
-            
-            yii::app()->clientScript->registerCoreScript("jquery");
-            yii::app()->clientScript->registerCoreScript("jquery.ui");
-        }
+       
         
-        public function renderAjax($view,$data=null,$return=false,$processOutput=true)
-                {
+        public function renderAjax($view,$data=null,$return=false,$processOutput=true){
                     Yii::app()->clientscript->scriptMap['jquery.js'] = false;
                     Yii::app()->clientscript->scriptMap['jquery-ui.min.js'] = false;
-                            $this->renderPartial($view,$data,$return,$processOutput);
+                    Yii::app()->clientscript->scriptMap['jquery.ba-bbq.js'] = false;
+                    $this->renderPartial($view,$data,$return,$processOutput);
         }
 
         /**

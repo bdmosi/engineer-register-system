@@ -60,21 +60,23 @@ class AcademicController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($ref_no)
+	public function actionCreate()
 	{
 		$model=new Academic;
-                $model->personinfo_ref_no = $ref_no;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if (isset($_POST['Academic'])) {
 			$model->attributes=$_POST['Academic'];
 			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$ref_no));
-			}
+                            
+                            echo TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, 'Academic record added successfull');
+                      }
+                      else{
+                         echo TbHtml::alert(TbHtml::ALERT_COLOR_ERROR, 'Error: Academic record not added');
+                      }
+                      
+                      Yii::app()->end();
 		}
 
-		$this->renderPartial('_form',array(
+		$this->render('_form',array(
 			'model'=>$model,
 		));
 	}
