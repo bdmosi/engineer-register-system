@@ -17,7 +17,7 @@
 
 )); ?>
     
-    <div id="response"></div>
+    <div id="membership-response"></div>
     
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
     
@@ -41,7 +41,7 @@
                     array(
                         'type'=>'POST',
                         'success'=>"function(response,status){
-                            $('#response').html(response);
+                            $('#membership-response').html(response);
                             //location.reload();
                           }"
                        

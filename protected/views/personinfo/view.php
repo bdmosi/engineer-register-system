@@ -154,7 +154,7 @@ foreach($model->employments as $employment){
          echo TbHtml::link('Edit',$this->createUrl('/Employment/update',
                  array('id'=>$employment->id)),
                  array('class'=>'btn btn-primary',
-                      'onclick'=>'openEmplForm'.$employment->id.'();return false;'
+                      'onclick'=>'$("#Update_Employ").dialog("open")'.$employment->id.'();return false;'
                      )
                  );
          ?>
@@ -579,6 +579,24 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id'=>'Add_New_Memb',
     'options'=>array(
         'title'=>'Add New Membership Information',
+        'width'=>400,
+        'height'=>300,
+        'autoOpen'=>false,
+    ),
+   
+));
+ $this->renderPartial('//employment/_form',array('model' => new Employment(),'profile_ref_no'=>$model->ref_no));
+ 
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+   
+        <?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id'=>'Update_Employ',
+    'options'=>array(
+        'title'=>'Update Emploment Information',
         'width'=>400,
         'height'=>300,
         'autoOpen'=>false,

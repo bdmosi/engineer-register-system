@@ -65,8 +65,7 @@ class AcademicController extends Controller
 		$model=new Academic;
 		if (isset($_POST['Academic'])) {
 			$model->attributes=$_POST['Academic'];
-			if ($model->save()) {
-                            
+			if ($model->save()){
                             echo TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, 'Academic record added successfull');
                       }
                       else{

@@ -18,7 +18,8 @@
         
 )); ?>
 
-     <div id='tag'></div>
+     <div id='academic_response'></div>
+     
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php $model->personinfo_ref_no = $profile_ref_no; ?>
@@ -44,7 +45,7 @@
                     array(
                         'type'=>'POST',
                         'success'=>"function(response,status){
-                            $('#tag').html(response);
+                            $('#academic_response').html(response);
                             //location.reload();
                           }"
                        
@@ -53,5 +54,7 @@
     </div>
 
     <?php $this->endWidget(); ?>
+    
+     
 
 </div><!-- form -->

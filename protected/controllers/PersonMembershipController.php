@@ -79,7 +79,7 @@ class PersonMembershipController extends Controller
                       Yii::app()->end();
 		}
 
-		$this->renderPartial('_form',array(
+		$this->render('_form',array(
 			'model'=>$model,
 		));
 	}
