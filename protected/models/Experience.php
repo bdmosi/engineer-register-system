@@ -8,7 +8,7 @@
  * @property string $expertize
  * @property integer $experience_years
  * @property string $experience_country
- * @property integer $tbl_personinfo_ref_no
+ * @property integer $personinfo_ref_no
  *
  * The followings are the available model relations:
  * @property Personinfo $tblPersoninfoRefNo
@@ -88,7 +88,7 @@ class Experience extends CActiveRecord
 		$criteria->compare('expertize',$this->expertize,true);
 		$criteria->compare('experience_years',$this->experience_years);
 		$criteria->compare('experience_country',$this->experience_country,true);
-		$criteria->compare('personinfo_ref_no',$this->tbl_personinfo_ref_no);
+		$criteria->compare('personinfo_ref_no',$this->personinfo_ref_no);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -11,6 +11,7 @@
  * @property string $status
  * @property string $lastlogin
  * @property integer $loginCounter
+ * @property string $activkey
  */
 class User extends CActiveRecord
 {
@@ -40,7 +41,7 @@ class User extends CActiveRecord
                         array('confirmPassword','equalsPassword','on' => 'create'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, confirmPassword, email, status, lastlogin, loginCounter', 'safe', 'on'=>'search'),
+			array('id, username, password, confirmPassword, email, status, lastlogin, loginCounter','activkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +69,8 @@ class User extends CActiveRecord
 			'status' => 'Status',
 			'lastlogin' => 'Lastlogin',
 			'loginCounter' => 'Login Counter',
+                    	'activkey' => 'activation key',
+
 		);
 	}
 
@@ -96,6 +99,8 @@ class User extends CActiveRecord
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('lastlogin',$this->lastlogin,true);
 		$criteria->compare('loginCounter',$this->loginCounter);
+                $criteria->compare('activkey',$this->activkey);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

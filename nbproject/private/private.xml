@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/managementsystem/protected/views/site/pages/about.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/site/index.php</file>
             <file>file:/var/www/html/managementsystem/protected/controllers/EmploymentController.php</file>
             <file>file:/var/www/html/managementsystem/protected/views/academic/_form.php</file>
             <file>file:/var/www/html/managementsystem/protected/views/personinfo/view.php</file>
+            <file>file:/var/www/html/managementsystem/protected/extensions/bootstrap/widgets/TbButtonColumn.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/employment/admin.php</file>
             <file>file:/var/www/html/managementsystem/protected/views/employment/_form.php</file>
+            <file>file:/var/www/html/managementsystem/protected/views/site/login.php</file>
             <file>file:/var/www/html/managementsystem/protected/controllers/AcademicController.php</file>
             <file>file:/var/www/html/managementsystem/protected/controllers/AcademicTypeController.php</file>
         </group>
