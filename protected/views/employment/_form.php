@@ -17,12 +17,11 @@
         'action'=>$this->createUrl('employment/update')
 )); ?>
    
-    <div id='response'></div>
-    <div id='empl_tag'> </div>
+     <div id='empl_response'> </div>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
     
-    <?php $model->personinfo_ref_no = $profile_ref_no; ?>
+    <?php //$model->personinfo_ref_no = $profile_ref_no; ?>
     <?php $model->personinfo_ref_no = $profile_employ_ref_no; ?>
     
     <?php echo $form->errorSummary($model); ?>
@@ -107,7 +106,7 @@
                     array(
                         'type'=>'POST',
                         'success'=>"function(response,status){
-                            $('#response').html(response);
+                            $('#empl_response').html(response);
                             //location.reload();
                           }"
                        
@@ -117,17 +116,4 @@
 
     <?php $this->endWidget(); ?>
 
-    <?php echo TbHtml::ajaxSubmitButton('Edit',$this->createUrl('employment/update'),
-                    array(
-                        'type'=>'POST',
-                        'success'=>"function(response,status){
-                            $('#empl_tag').html(response);
-                            //location.reload();
-                          }"
-                       
-                    ),
-                    array('class'=>'btn btn-primary')) ?>
-    </div>
-
-    <?php $this->endWidget(); ?>
-</div><!-- form -->
+    </div><!-- form -->

@@ -93,28 +93,20 @@ class EmploymentController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);	
-                $model=new Employment;
-
-                
-
-		// Uncomment the following line if AJAX validation is needed
+                //$model=new Employment;
+                // Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Employment'])){
 			$model->attributes=$_POST['Employment'];
 			if ($model->save()){
-                            
-				//$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
-			echo TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, 'Employment record added');
-                      }
-                      else{
-                         echo TbHtml::alert(TbHtml::ALERT_COLOR_ERROR, 'Error: Employment record not added');
-                      }
-                      
-                      Yii::app()->end();
+                            $this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
+
+                            }
+
 		}
 
-		$this->render('_form',array(
+		$this->renderPartial('_form',array(
 			'model'=>$model,
 		));
 	}

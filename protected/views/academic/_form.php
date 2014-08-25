@@ -22,7 +22,7 @@
      
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
-    <?php $model->personinfo_ref_no = $profile_ref_no; ?>
+    <?php $model->personinfo_ref_no = $profile_aca_ref_no; ?>
     
     <?php echo $form->errorSummary($model); ?>
 

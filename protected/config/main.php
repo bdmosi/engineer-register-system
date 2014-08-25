@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'engineer register system',
+	'name'=>'ENGINEERS REGISTRATION SYSTEM',
          'aliases' =>array(
              'bootstrap' => realpath(__DIR__.'/../extensions/bootstrap')
          ),
@@ -48,7 +48,7 @@ return array(
                     'class' => 'bootstrap.components.TbApi',
                 ),
 		// uncomment the following to enable URLs in path-format
-                /*
+               /*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -58,6 +58,7 @@ return array(
 			),
 		),
                 */
+               
 	/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -98,6 +99,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'bdmosi93@gmail.com',
+		'adminEmail'=>'mosibarakadanniel@gmail.com',
 	),
 );

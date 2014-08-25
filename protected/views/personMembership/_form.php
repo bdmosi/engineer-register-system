@@ -17,11 +17,11 @@
 
 )); ?>
     
-    <div id="membership-response"></div>
+    <div id="membership_response"></div>
     
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
     
-        <?php $model->personinfo_ref_no = $profile_ref_no; ?>
+        <?php $model->personinfo_ref_no = $profile_memb_ref_no; ?>
 
     <?php echo $form->errorSummary($model); ?>
 
@@ -41,7 +41,7 @@
                     array(
                         'type'=>'POST',
                         'success'=>"function(response,status){
-                            $('#membership-response').html(response);
+                            $('#membership_response').html(response);
                             //location.reload();
                           }"
                        
