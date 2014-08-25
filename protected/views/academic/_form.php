@@ -18,7 +18,9 @@
         
 )); ?>
 
+    
      <div id='academic_response'></div>
+     
      
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
@@ -51,6 +53,7 @@
                        
                     ),
                     array('class'=>'btn btn-primary')) ?>
+           
     </div>
 
     <?php $this->endWidget(); ?>

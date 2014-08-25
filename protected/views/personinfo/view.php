@@ -154,7 +154,9 @@ foreach($model->employments as $employment){
          echo TbHtml::link('Edit',$this->createUrl('/Employment/update',
                  array('id'=>$employment->id)),
                  array('class'=>'btn btn-primary',
-                 'onclick' => '$("#Edit_employ").dialog("open"); return false;'
+                 //'onclick' => '$("#Edit_employ").dialog("open"); return false;'
+                   'onclick'=>'openEmplForm'.$employment->id.'();return false;'
+
                      )
                  );
          ?>
@@ -238,7 +240,9 @@ foreach($model->academics as $academic){
          echo TbHtml::link('Edit',$this->createUrl('/Academic/update',
                  array('id'=>$academic->id)),
                  array('class'=>'btn btn-primary',
-                       'onclick'=>'openAcacForm'.$academic->id.'();return false;'
+                      'onclick'=>'openAcacForm'.$academic->id.'();return false;'
+                    //'onclick' => '$("#Edit_Aca").dialog("open"); return false;'
+
                      )
                  );
    ?>
@@ -575,24 +579,6 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 <?php
 
-//$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-//    'id'=>'Add_New_Memb',
-//    'options'=>array(
-//        'title'=>'Add New Membership Information',
-//        'width'=>400,
-//        'height'=>300,
-//        'autoOpen'=>false,
-//    ),
-//   
-//));
-// $this->renderPartial('//employment/_form',array('model' => new Employment(),'profile_ref_no'=>$model->ref_no));
-// 
-//$this->endWidget('zii.widgets.jui.CJuiDialog');
-
-?>
-   
-        <?php
-
 $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id'=>'Add_New_Membership',
     'options'=>array(
@@ -609,21 +595,39 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>
    
-        
+ <!-----for edit button------->       
 <?php
 
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-    'id'=>'Edit_employ',
-    'options'=>array(
-        'title'=>'',
-        'width'=>350,
-        'height'=>650,
-        'autoOpen'=>false,
-    ),
-   
-));
- $this->renderPartial('//employment/_form',array('model' => new Employment(),'profile_employ_ref_no'=>$model->ref_no));
- 
-$this->endWidget('zii.widgets.jui.CJuiDialog');
+//$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+//    'id'=>'Edit_employ',
+//    'options'=>array(
+//        'title'=>'',
+//        'width'=>350,
+//        'height'=>650,
+//        'autoOpen'=>false,
+//    ),
+//   
+//));
+// $this->renderPartial('//employment/_form',array('model' => new Employment(),'profile_employ_ref_no'=>$model->ref_no));
+// 
+//$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+?>
+
+ <?php
+
+//$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+//    'id'=>'Edit_Aca',
+//    'options'=>array(
+//        'title'=>'Add New Academic Information',
+//        'width'=>360,
+//        'height'=>300,
+//        'autoOpen'=>false,
+//    ),
+//   
+//));
+// $this->renderPartial('//academic/_form',array('model' => new Academic(),'profile_aca_ref_no'=>$model->ref_no));
+// 
+//$this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>

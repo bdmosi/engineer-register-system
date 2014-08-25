@@ -88,15 +88,13 @@ class AcademicController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-                 //$model->personinfo_ref_no = $ref_no;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Academic'])) {
 			$model->attributes=$_POST['Academic'];
 			if ($model->save()) {
-				$this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
+		          $this->redirect(array('personinfo/view','id'=>$model->personinfo_ref_no));
 			}
 		}
 

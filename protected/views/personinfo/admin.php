@@ -56,9 +56,18 @@ $('.search-form form').submit(function(){
 		'house_tel',
 		'office_tel',
 		'mobile',
-		'sex_id',
-		'marital_status_id',
-		'erb_id',
+                array(
+                    'name'=>'sex_id',
+                    'value'=>$model->sex->description
+                ),
+		array(
+                    'name'=>'marital_status_id',
+                    'value'=>$model->maritalStatus->description
+                   ),
+            
+		array('name'=>'erb_id',
+                     'value'=>$model->erb->description
+                     ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

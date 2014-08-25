@@ -93,10 +93,9 @@ class Personinfo extends CActiveRecord
 			'mobile' => 'Mobile Number',
 			'sex_id' => 'Sex',
 			'erb_id' => 'Erb',
-			'sex_id' => 'Sex',
 			'marital_status_id' => 'Marital Status',
-			'erb_id' => 'Engineer Registration Board',
-                        //'academic_type_id' => ' Academic Type',
+			//'erb_id' => 'Engineer Registration Board',
+               
 
 		);
 	}

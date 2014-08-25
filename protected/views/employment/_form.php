@@ -13,15 +13,13 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-        'action'=>$this->createUrl('employment/create'),
-        'action'=>$this->createUrl('employment/update')
+        'action'=>$this->createUrl('employment/create')
 )); ?>
    
      <div id='empl_response'> </div>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
     
-    <?php //$model->personinfo_ref_no = $profile_ref_no; ?>
     <?php $model->personinfo_ref_no = $profile_employ_ref_no; ?>
     
     <?php echo $form->errorSummary($model); ?>
