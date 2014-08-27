@@ -32,11 +32,11 @@ class UserController extends Controller
                     'users'=>array('@')
             ),
                 array('allow', // allow all users to perform 'index' and 'view' actions
-                        'actions'=>array('index','view','create'),
+                        'actions'=>array('index','view','create','recovery'),
                         'users'=>array('*'),
                     ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                        'actions'=>array('update'),
+                        'actions'=>array('update','changepassword'),
                         'users'=>array('@'),
              ),
                 array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -165,7 +165,61 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionChangepassword($id)
+        {      
+           $model = new User('ChangePwd');               
+ 
+            if(isset($_POST['User']))
+              {
+               $model = User::model()->findByAttributes(array('id'=>$id));
+                $model->setScenario('changePwd');
+                    $model->attributes = $_POST['User'];
+                    $valid = $model->validate();
+ 
+                if($valid){
+ 
+                      //$model->password = hashPassword($model->new_password);
+                      $model->password = User::model()->hashPassword($model->new_password);
+ 
+                  if ($model->save()) {
+                    $msg = 'successfully changed password';
+                    //$this->redirect(array('changepassword', 'msg' => 'successfully changed password'));
+                    } else {
+                      $msg = 'password not changed';
+                    //$this->redirect(array('changepassword', 'msg' => 'password not changed'));
+                   }
+            }
+          }
+ 
+              $this->render('changepassword',array('model'=>$model,'msg'=> $msg)); 
+      }
 
+      
+      public function actionRecovery(){ 
+          
+              $model = new PasswordRecoveryForm();
+              
+              if(isset($_POST['PasswordRecoveryForm'])){
+                  $model->attributes = $_POST['PasswordRecoveryForm'];
+                  if($model->validate()){
+                     $user = User::model()->findByEmail($model->email);
+                     $newPassword = uniqid();
+                     $user->password = $user->hashPassword($newPassword);
+                     if($user->save()){
+                         Yii::app()->user->setFlash('recoveryMessage',"Your new password is {$newPassword}");
+                     }else{
+                         Yii::app()->user->setFlash('recoveryMessage',"Password reset failed.");
+                     
+                     }
+                     
+                  }
+              }
+
+              $this->render('recovery',array('model'=>$model)); 
+      }
+      
+      
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

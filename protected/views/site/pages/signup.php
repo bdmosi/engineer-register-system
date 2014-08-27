@@ -1,12 +1,3 @@
-<?php
-/* @var $this SiteController */
-
-//$this->pageTitle=Yii::app()->name . ' - SignUp';
-//$this->breadcrumbs=array(
-//	'SignUp',
-//);
-?>
-
 <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron -->

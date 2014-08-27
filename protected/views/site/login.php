@@ -45,6 +45,8 @@ $this->breadcrumbs=array(
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
+        
+        <a href="<?php echo $this->createUrl('/user/recovery'); ?>" >?Forgot Password</a>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Login'); ?>

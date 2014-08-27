@@ -17,6 +17,9 @@ class User extends CActiveRecord
 {
     
     public $confirmPassword;
+    public $old_password;
+    public $new_password;
+    public $repeat_password;
     /**
 	 * @return string the associated database table name
 	 */
@@ -34,6 +37,9 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password, confirmPassword, email', 'required','on' => 'create'),
+                        array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
+                        array('old_password', 'findPasswords', 'on' => 'changePwd'),
+                        array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
 			array('loginCounter', 'numerical', 'integerOnly'=>true),
 			array('username, password,confirmPassword, email', 'length', 'max'=>255),
 			array('status', 'length', 'max'=>20),
@@ -42,7 +48,8 @@ class User extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, confirmPassword, email, status, lastlogin, loginCounter', 'safe', 'on'=>'search'),
-		);
+                        
+                    );
 	}
 
 	/**
@@ -131,6 +138,21 @@ class User extends CActiveRecord
             return false;
         }
 
+        //matching the old password with your existing password.
+        public function findPasswords($attribute, $params)
+        {
+              $user = User::model()->findByPk(Yii::app()->user->id);
+                if ($user->password != sha1($this->old_password))
+                     $this->addError($attribute, 'Old password is incorrect.');
+        }
+        
+        //Making sure that email exists.
+        public function findByEmail($attribute)
+        {
+              $user = User::model()->findByAttributes(array('email' => $attribute));
+              return $user;
+        }
+        
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
