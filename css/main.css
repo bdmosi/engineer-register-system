@@ -4,21 +4,22 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background:lemonchiffon;
 }
 
 #page
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: white;
+	background: lightcyan;
 	border: 1px solid #C9E0ED;
 }
 
 #header
 {
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 30px;
+        text-align: center;
 	border-top: 3px solid #C9E0ED;
 }
 
@@ -49,7 +50,8 @@ body
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background:white url(bg.gif) repeat-x center top;
+        padding: 10px 20px;
 }
 
 #mainmenu ul
@@ -171,7 +173,7 @@ div.search-form
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	color: #298dcd;
+	color: whitesmoke;
 }
 
 .portlet-content

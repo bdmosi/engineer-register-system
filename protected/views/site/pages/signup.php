@@ -2,7 +2,6 @@
 
       <!-- Main jumbotron -->
       <div class="jumbotron">
-        <h3>ERS</h3>
-        <p>Use the button to sign up</p>
-        <p><a href="../user/create" class="btn btn-primary btn-lg" role="button">signup &raquo;</a></p>
+        <p>Please sign up if you don't have an account</p>
+         <a href="<?php echo $this->createUrl('/user/create'); ?>" class="btn btn-primary btn-lg" role="button">Sign up &raquo;</a>
       </div>
